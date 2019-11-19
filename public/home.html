@@ -6,21 +6,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+
+    <!-- BOOTSTRAP CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- RESET.CSS  -->
+    <link rel="stylesheet" href="styles/reset.css">
+
+    <!-- MATERIAL ICONS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+     rel="stylesheet">
+
+    <!-- HOME.CSS  -->
+    <link rel="stylesheet" href="styles/home.css" media="screen" title="no title">
+
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <h1>This is the home page</h1>
-    <button id="btnLocate">Locate Me</button>
-    <div class="row">
-        <div id="map" class="col l6"></div>
+
+    <nav>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <header>
+        <div id="header" class="container-fluid">
+            <div class="row justify-content-center">
+            <div id="logo" class="col-lg-4 text-center">
+                <p>SembraCare Logo Here</p>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="employee-tasks-storage" class="container">
+
+            <div id="priority-employee-tasks" class="row text-center justify-content-center">
+
+                <!-- EVV/Check In -->
+                <div class="col-lg-4 priority-row">
+                    
+                    <button id="btnLocate" class="button" type="button"><i class="material-icons">schedule</i><p>Check In</p></button>
+                </div>
+                <div class="col-lg-4 priority-row">
+                        <i class="material-icons">question_answer</i>
+                        <p>Option 1 - Tests</p>
+                    </div>
+                <div class="col-lg-4 priority-row">
+                    <i class="material-icons">date_range</i>
+                    <p>Option 3 - Schudule</p>
+                </div>
+            </div>
+
+            <div id="secondary-employee-tasks" class="row text-center justify-content-center">
+                <div class="col-lg-6 secondary-row">
+                    <p>Possible Future Option</p>
+                </div>
+                <div class="col-lg-6 secondary-row">
+                    <p>Possible Future Option</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+    </footer>
+
+
+
+    
+
+    <div id="map-storage" class="container">
+        <div class="row">
+        <div id="map" class="col-xs-10 col-lg-4"></div>
     </div>
+    </div>
+    
     <script src="js/evv.js" type="text/javascript"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBch57574bZrBIaozRgthW7XGglbY305y4"
         type="text/javascript"></script>
 </body>
 
 </html>
+
+<!-- *************************  NOTES  ******************************* -->
+
+<!-- Added home.css file
+    Added reset.css
+    EVV (check in) button added to check in col and functioning correctly when clicked anywhere within col)
+ -->
+
