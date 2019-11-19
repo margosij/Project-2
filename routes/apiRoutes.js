@@ -73,4 +73,14 @@ module.exports = function(app) {
       res.json(dbPost);
     });
   });
+  // POST route for saving a new post
+  app.post("/api/EVVRecord", function(req, res) {
+    console.log(req.body);
+    db.EVVRecord.create({
+      longitude: req.body.longitude,
+      latitude: req.body.latitude
+    }).then(function(dbEVVRecord) {
+      res.json(dbEVVRecord);
+    });
+  });
 };
