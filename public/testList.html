@@ -4,9 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+
+    <!-- BOOTSTRAP CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- RESET.CSS  -->
+    <link rel="stylesheet" href="styles/reset.css">
+
+    <!-- TEST.CSS  -->
+    <link rel="stylesheet" href="styles/testList.css">
+
+    <title>Employee Tests</title>
 </head>
 <body>
-    <h1>This is the test list page</h1>
+
+    <nav>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <div id="header" class="container-fluid">
+            <div class="row justify-content-center">
+            <div id="logo" class="col-lg-4 text-center">
+                <p>SembraCare Logo Here</p>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="test-storage" class="container">
+            
+            <div id="first-test-row" class="row text-center justify-content-center">
+                <div class="col-sm-12 mb-3 col-lg-6 test-one-cols">
+                    test 1
+                </div>
+                <div class="col-sm-12 mb-3 col-lg-6 test-one-cols">
+                    test 2
+                </div>
+            </div>
+
+            <div id="second-test-row" class="row text-center justify-content-center">
+                <div class="col-sm-12 mb-3 col-lg-4 mb-md-1 test-two-cols">
+                    test 3
+                </div>
+                <div class="col-sm-12 mb-3 col-lg-4 mb-md-1 test-two-cols">
+                    test 4
+                </div>
+                <div class="col-sm-12 mb-3 col-lg-4 mb-md-1 test-two-cols">
+                    test 5
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul> 
+    </footer>
+    
 </body>
 </html>
+
+
