@@ -1,0 +1,38 @@
+
+* {
+    box-sizing: border-box;
+}
+
+#header {
+    border: 1px solid red;
+    margin-bottom: 5%;
+}
+
+#logo {
+    border: 1px solid black;
+}  
+
+#login-container {
+    border: 1px solid green;
+    padding: 3%;
+    /* background: gray; */
+}
+
+#login-form-storage {
+    border: 5px solid rgb(21, 48, 130);
+    padding: 5%;
+    /* background: rgb(223, 148, 9); */
+}
+
+input {
+    margin-bottom: 1%;
+}
+
+label {
+    margin-bottom: 1%;
+}
+
+.btn-primary {
+    background-color: rgb(223, 148, 9)
+}
+

@@ -1,0 +1,38 @@
+
+* {
+    box-sizing: border-box;
+}
+
+#header {
+    border: 1px solid red;
+    margin-bottom: 4%;
+}
+
+#logo {
+    border: 1px solid black;
+}
+
+#test-storage {
+    border: 3px solid black;
+    padding: 3%;
+}
+
+#first-test-row {
+    /* border: 1px solid orange; */
+    /* border: 5px solid rgb(21, 48, 130); */
+    margin-bottom: 5%;
+}
+
+/* #second-test-row {
+    border: 1px solid orange;
+} */
+
+.test-one-cols,
+.test-two-cols {
+    /* border: 1px solid orange; */
+    border: 1px solid rgb(21, 48, 130);
+    /* margin-left: 1%; */
+    /* margin-right: 1%; */
+    padding: 8%;
+}
+
