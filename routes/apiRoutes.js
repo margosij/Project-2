@@ -7,7 +7,7 @@
 
 // Requiring our Todo model
 var db = require("../models");
-
+console.log(db.TestQuestion, "testing the db");
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -20,6 +20,7 @@ module.exports = function(app) {
 
   //Get route for retrieving the test question info
   app.get("/api/testquestions", function(req, res) {
+    console.log("testing the API route");
     db.TestQuestion.findAll({}).then(function(dbQuestions) {
       res.json(dbQuestions);
     });
@@ -78,6 +79,16 @@ module.exports = function(app) {
       }
     }).then(function(dbPost) {
       res.json(dbPost);
+    });
+  });
+  // POST route for saving a new post
+  app.post("/api/EVVRecord", function(req, res) {
+    console.log(req.body);
+    db.EVVRecord.create({
+      longitude: req.body.longitude,
+      latitude: req.body.latitude
+    }).then(function(dbEVVRecord) {
+      res.json(dbEVVRecord);
     });
   });
 };

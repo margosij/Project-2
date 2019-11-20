@@ -1,4 +1,4 @@
-var mysql = require("mysql");
+// var mysql = require("mysql");
 
 // var routes = require("../routes/apiRoutes");
 var submitTest = $("#submitTest");
@@ -6,19 +6,39 @@ var submitTest = $("#submitTest");
 // var correct = 0;
 // var incorrect = 0;
 
-submitTest.hide();
+var questions = [];
 
-var testSetup = {
-  test: function(questions, choices) {
-    var queryString = "SELECT * FROM " + questions + ";";
-    mysql.query(queryString, function(err, res) {
-      if (err) {
-        throw err;
-      }
-      choices(res);
-    });
-  }
-};
+submitTest.hide();
+testSetup();
+
+$("#beginTest").on("click", startFunction);
+// $("#submitTest").on("click", results);
+
+function startFunction() {
+  displayTest.show();
+  submitTest.show();
+  $("#beginTest").hide();
+}
+
+function testSetup() {
+  console.log("starting search");
+  $.get("/api/testquestions", function(questionText) {
+    questions = questionText;
+    console.log(JSON.stringify(questions), "questions");
+  });
+}
+
+// var testSetup = {
+//   test: function(questionText, questionAnswer, questionOptions) {
+//     var queryString = "SELECT * FROM " + questionText + ";";
+//     mysql.query(queryString, function(err, res) {
+//       if (err) {
+//         throw err;
+//       }
+//       choices(res);
+//     });
+//   }
+// };
 
 var testDisplay = {
   test: function(cb) {
@@ -27,14 +47,14 @@ var testDisplay = {
     });
   }
 };
-
+// console.log(testDisplay);
 //formula for displaying the questions and their answers
 for (var i = 0; i < testDisplay.length; i++) {
   $("#displayTest").append("<p>" + testDisplay[i].question + "</p>");
   for (var j = 0; j < testDisplay[i].answers.length; j++) {
     $("#displayTest").append(
       // eslint-disable-next-line quotes
-      '<input type="radio" name="aswers-' +
+      '<input type="radio" name="answers-' +
         i +
         // eslint-disable-next-line quotes
         '"value="' +
@@ -45,5 +65,5 @@ for (var i = 0; i < testDisplay.length; i++) {
     );
   }
 }
-
-module.exports = testDisplay;
+// console.log(testDisplay[i]);
+// module.exports = testDisplay;

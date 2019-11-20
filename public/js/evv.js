@@ -10,10 +10,11 @@ $(document).ready(function() {
   function initMap() {
     var map, infoWindow;
     unFilter = true;
-    map = new google.maps.Map(document.getElementById("map"), {
-      center: { lat: -34.397, lng: 150.644 },
-      zoom: 15
-    });
+    //if we want to add the map back uncomment lines 14-17 and uncomment public/home.html lines 133-137
+    // map = new google.maps.Map(document.getElementById("map"), {
+    //   center: { lat: -34.397, lng: 150.644 },
+    //   zoom: 15
+    // });
     infoWindow = new google.maps.InfoWindow();
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -31,12 +32,12 @@ $(document).ready(function() {
           infoWindow.open(map);
           map.setCenter(pos);
 
-          console.log(latitude);
-          console.log(longitude);
+          insertEVV(longitude, latitude, 1);
         },
         function() {
           handleLocationError(true, infoWindow, map.getCenter());
-        }
+        },
+        $("#check-in-modal").modal("show")
       );
     } else {
       // Browser doesn't support Geolocation
@@ -52,5 +53,15 @@ $(document).ready(function() {
         : "Error: Your browser doesn't support geolocation."
     );
     infoWindow.open(map);
+  }
+  function insertEVV(longitude, latitude, EmployeeID) {
+    var EVVRecord = {
+      longitude: longitude,
+      latitude: latitude,
+      //hardcoding "EmployeeID" for now but once we have the login set up we need to go back and rework this:
+      EmployeeID: EmployeeID
+    };
+
+    $.post("/api/EVVRecord", EVVRecord);
   }
 });
