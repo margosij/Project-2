@@ -18,6 +18,13 @@ module.exports = function(app) {
     });
   });
 
+  //Get route for retrieving the test question info
+  app.get("/api/testquestions", function(req, res) {
+    db.TestQuestion.findAll({}).then(function(dbQuestions) {
+      res.json(dbQuestions);
+    });
+  });
+
   // Get route for returning posts of a specific category
   app.get("/api/posts/category/:category", function(req, res) {
     db.Post.findAll({
