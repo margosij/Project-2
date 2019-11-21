@@ -19,7 +19,7 @@ body {
     height: 150px;
   }
 
-  button {
+  .button {
       color: #0c5c9c;
       background: rgb(236, 231, 226);
       width: 100%; 
@@ -30,9 +30,10 @@ body {
       /* box-shadow: 5px 5px #6cbfd8; */
       box-shadow: 5px 5px #ce750f;
       transform: translateY(4px);
+      border-radius: .25rem;    
   }
 
-  button:hover {
+  .button:hover {
       background-color: rgb(207, 206, 205);
   }
 
@@ -40,6 +41,7 @@ body {
     background-color: rgb(158, 151, 151);
     box-shadow: 0 5px #198ec4;
     transform: translateY(4px);
+    border-radius: .25rem;
   }
 
   #header {
@@ -82,3 +84,26 @@ body {
     color: #0c5c9c;
     /* color: white; */
 }
+
+/* ****************  Modal Style  ******************** */
+.modal-content {
+    background: rgb(236, 231, 226);
+    color: #0c5c9c;
+    font-size: 1.5em;
+}
+
+.btn-secondary {
+    background: #0c5c9c;
+    box-shadow: 5px 5px #ce750f;
+    border: none;
+  }
+
+  .btn-secondary:hover {
+    background-color: rgb(207, 206, 205);
+  }
+
+  .btn-secondary:active {
+    background-color: rgb(158, 151, 151);
+    box-shadow: 0 5px #198ec4;
+    transform: translateY(4px);
+  }
