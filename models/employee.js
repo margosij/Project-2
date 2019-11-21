@@ -42,5 +42,13 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
+  Employee.associate = function(models) {
+    // Associating Author with Posts
+    // When an Author is deleted, also delete any associated Posts
+    Employee.hasMany(models.EVVRecord, {
+      onDelete: "cascade"
+    });
+  };
+
   return Employee;
 };

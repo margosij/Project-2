@@ -11,13 +11,6 @@ var passport = require("../config/passport");
 // Routes
 // =============================================================
 module.exports = function(app) {
-  // GET route for getting all of the posts
-  app.get("/api/posts/", function(req, res) {
-    db.Post.findAll({}).then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
-
   //Get route for retrieving the test question info
   app.get("/api/testquestions", function(req, res) {
     db.TestQuestion.findAll({}).then(function(dbTestQuestions) {
