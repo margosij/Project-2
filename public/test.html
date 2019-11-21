@@ -20,9 +20,39 @@
     <p id="correct"></p>
     <p id="incorrect"></p>
 
+    <!-- Modal -->
+
+    <div class="modal fade bd-example-modal-lg" id="modalMatch" tabindex="-1" role="dialog" aria-labelledby="modal"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">
+                        Please make sure to answer all the questions!
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3 id="modalName"></h3>
+                    <!-- <img src="match-img" class="match-img" id="modal-img" alt="profilepic" /> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="modalClose" data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="../test/testquestions.js"></script>
+<script src="/test/testquestions.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 
 </body>
 </html>

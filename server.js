@@ -2,13 +2,20 @@ require("dotenv").config();
 
 var db = require("./models");
 var express = require("express");
+var session = require("express-session");
 var app = express();
+var passport = require("./config/passport");
 var PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
 
 // Routes
 require("./routes/apiRoutes")(app);
