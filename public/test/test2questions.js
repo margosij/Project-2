@@ -1,5 +1,3 @@
-// var mysql = require("mysql");
-
 var displayTest = $("#displayTest");
 var submitTest = $("#submitTest");
 
@@ -63,11 +61,3 @@ function testSetup() {
     }
   });
 }
-
-// var testDisplay = {
-//   test: function(cb) {
-//     testSetup.test("testquestions", function(res) {
-//       cb(res);
-//     });
-//   }
-// };
