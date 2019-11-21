@@ -7,7 +7,6 @@
 
 // Requiring our Todo model
 var db = require("../models");
-console.log(db.TestQuestion, "testing the db");
 // Routes
 // =============================================================
 module.exports = function(app) {
