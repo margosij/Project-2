@@ -88,4 +88,10 @@ module.exports = function(app) {
       res.json(dbEVVRecord);
     });
   });
+
+  app.get("/api/EVVRecord", function(req, res) {
+    db.EVVRecord.findAll({}).then(function(dbEVVRecord) {
+      res.json(dbEVVRecord);
+    });
+  });
 };
