@@ -2,13 +2,20 @@ require("dotenv").config();
 
 var db = require("./models");
 var express = require("express");
+var session = require("express-session");
 var app = express();
+var passport = require("./config/passport");
 var PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
 
 // Routes
 require("./routes/apiRoutes")(app);
@@ -82,14 +89,14 @@ db.sequelize.sync({ force: true }).then(function() {
       .then(
         db.TestQuestion.bulkCreate([
           {
-            TestListId: "1",
+            TestListId: 1,
             questionText:
               "If someone works for the same agency as you, you are allowed to discuss information about your client.",
             questionAnswer: "False",
             questionOptions: "True,False"
           },
           {
-            TestListId: "1",
+            TestListId: 1,
             questionText:
               "All of the following should remain confidential except:",
             questionAnswer: "reporting a fall to the nurse",
@@ -97,14 +104,14 @@ db.sequelize.sync({ force: true }).then(function() {
               "client diagnosis,client social security number,reporting a fall to the nurse,clients phone number"
           },
           {
-            TestListId: "1",
+            TestListId: 1,
             questionText:
               "Confidentiality is one of your clients rights on their Bill of Rights.",
             questionAnswer: "True",
             questionOptions: "True,False"
           },
           {
-            TestListId: "1",
+            TestListId: 1,
             questionText:
               "If you share client confidential information you could:",
             questionAnswer: "All of the above",
@@ -112,28 +119,28 @@ db.sequelize.sync({ force: true }).then(function() {
               "Lose your job,Face criminal charges,Have a lawsuit,All of the above"
           },
           {
-            TestListId: "1",
+            TestListId: 1,
             questionText:
               "What would you do if you witness someones breaking client confidentiality?",
             questionAnswer: "Report to supervisor",
             questionOptions: "Ignore it,Laugh,Report to supervisor,Join in"
           },
           {
-            TestListId: "1",
+            TestListId: 1,
             questionText:
               "If a client tells you that his left side is numb you must not tell anyone.",
             questionAnswer: "False",
             questionOptions: "True,False"
           },
           {
-            TestListId: "1",
+            TestListId: 1,
             questionText:
               "It is okay to share client information with any part of the clients family.",
             questionAnswer: "False",
             questionOptions: "True,False"
           },
           {
-            TestListId: "1",
+            TestListId: 1,
             questionText:
               "The following must be kept in a locked cabinet or a supervised area:",
             questionAnswer: "All of the above",
@@ -141,14 +148,14 @@ db.sequelize.sync({ force: true }).then(function() {
               "Medical records,Personal files,TB test results,All of the above"
           },
           {
-            TestListId: "1",
+            TestListId: 1,
             questionText:
               "Your supervisor can share your annual evaluation results with your coworkers?",
             questionAnswer: "False",
             questionOptions: "True,False"
           },
           {
-            TestListId: "1",
+            TestListId: 1,
             questionText:
               "HIPAA was passed by Congress and is a Federal Law to ensure all of us the confidentiality of our personal medical information.",
             questionAnswer: "True",

@@ -3,7 +3,6 @@ $(document).ready(function() {
   //setting global variables for latitude and longitude to pass through yelp Ajax Request
   var latitude;
   var longitude;
-  var evvData = getEVV();
 
   //On Click event to get map and current latitude and longitude
   $("#btnLocate").on("click", initMap);
@@ -64,12 +63,5 @@ $(document).ready(function() {
     };
 
     $.post("/api/EVVRecord", EVVRecord);
-  }
-
-  function getEVV() {
-    $.get("/api/EVVRecord", function(data) {
-      var evvRecords = data;
-      console.log(evvRecords);
-    });
   }
 });
