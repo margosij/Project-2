@@ -8,6 +8,7 @@ var wrong = 0;
 
 submitTest.hide();
 displayTest.hide();
+$("#answerQuestions").hide();
 
 $("#beginTest").on("click", startFunction);
 $("#submitTest").on("click", results);
@@ -19,23 +20,27 @@ function startFunction() {
 }
 
 function results() {
-  displayTest.hide();
-  submitTest.hide();
-
-  $("#correct")
-    .text("Answers right: " + correct)
-    .show();
-  $("#incorrect")
-    .text("Wrong answers: " + wrong)
-    .show();
   selectedAnswers = $(displayTest.children("input:checked"));
   for (var i = 0; i < selectedAnswers.length; i++) {
-    if (selectedAnswers[i].value === dailyLiving[i].correctAnswer) {
-      correct++;
-      $("#correct").text("Answers right: " + correct);
+    if (selectedAnswers.length < 10 || selectedAnswers.length === 0) {
+      $("#modalMatch").modal("toggle");
     } else {
-      wrong++;
-      $("#incorrect").text("Wrong answers: " + wrong);
+      displayTest.hide();
+      submitTest.hide();
+
+      $("#correct")
+        .text("Answers right: " + correct)
+        .show();
+      $("#incorrect")
+        .text("Wrong answers: " + wrong)
+        .show();
+      if (selectedAnswers[i].value === dailyLiving[i].correctAnswer) {
+        correct++;
+        $("#correct").text("Answers right: " + correct);
+      } else {
+        wrong++;
+        $("#incorrect").text("Wrong answers: " + wrong);
+      }
     }
   }
 }
