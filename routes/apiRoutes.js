@@ -18,6 +18,13 @@ module.exports = function(app) {
     });
   });
 
+  //Get route for retrieving the test question info
+  app.get("/api/testquestions", function(req, res) {
+    db.TestQuestion.findAll({}).then(function(dbTestQuestions) {
+      res.json(dbTestQuestions);
+    });
+  });
+
   // Get route for returning posts of a specific category
   app.get("/api/posts/category/:category", function(req, res) {
     db.Post.findAll({
@@ -42,7 +49,6 @@ module.exports = function(app) {
 
   // POST route for saving a new post
   app.post("/api/posts", function(req, res) {
-    console.log(req.body);
     db.Post.create({
       title: req.body.title,
       body: req.body.body,
@@ -75,7 +81,6 @@ module.exports = function(app) {
   });
   // POST route for saving a new post
   app.post("/api/EVVRecord", function(req, res) {
-    console.log(req.body);
     db.EVVRecord.create({
       longitude: req.body.longitude,
       latitude: req.body.latitude

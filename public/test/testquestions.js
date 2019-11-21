@@ -145,7 +145,7 @@ for (var i = 0; i < dailyLiving.length; i++) {
   for (var j = 0; j < dailyLiving[i].answers.length; j++) {
     displayTest.append(
       // eslint-disable-next-line quotes
-      '<input type="radio" name="aswers-' +
+      '<input type="radio" name="answers-' +
         i +
         // eslint-disable-next-line quotes
         '"value="' +

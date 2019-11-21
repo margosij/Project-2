@@ -21,10 +21,9 @@ function startFunction() {
 }
 
 function testSetup() {
-  //   console.log("starting search");
   $.get("/api/testquestions", function(questionText) {
     questions = questionText;
-    // console.log(questions, "questions");
+    // console.log(JSON.stringify(questions), "questions");
     console.log(questions[0].questionText);
     console.log(questions[0].questionAnswer);
   });
@@ -49,7 +48,7 @@ var testDisplay = {
     });
   }
 };
-// console.log(testDisplay);
+
 //formula for displaying the questions and their answers
 for (var i = 0; i < testDisplay.length; i++) {
   $("#displayTest").append("<p>" + testDisplay[i].question + "</p>");
