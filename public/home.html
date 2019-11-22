@@ -34,49 +34,69 @@
        -->
 
 
-      <!-- Modal -->
-      <div class="modal fade" id="check-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <!-- Modal -->
+    <div class="modal fade" id="check-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
+            <div class="modal-content text-center">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Employee Check-In Success</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <h3>You are checked in to work!</h3>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
+                <h5 class="modal-title" id="exampleModalLongTitle">Employee Check-In Success</h5>
 
-    <nav>
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Active</a>
+                <!-- This was an extra button - keep till final push  -->
+                
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button> -->
+            </div>
+            <!-- <div class="modal-body">
+                <h3>You are checked in to work!</h3>
+            </div> -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-light navbar-5 white">
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#"><p>LOGO</p></a>
+    
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent15"
+        aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent15">
+    
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Check In</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <a class="nav-link" href="#">Schedule</a>
             </li>
         </ul>
+        <!-- Links -->
+    
+    </div>
+        <!-- Collapsible content -->
+    
     </nav>
+    <!--/.Navbar-->
     
     <header>
         <div id="header" class="container-fluid">
             <div class="row justify-content-center">
-            <div id="logo" class="col-lg-4 text-center">
-                <p>SembraCare Logo Here</p>
-            </div>
+                <div id="logo" class="col-lg-4 text-center">
+                    <p id="logo-p">
+                    </p>
+                </div>
             </div>
         </div>
     </header>
@@ -84,36 +104,49 @@
     <main>
         <div id="employee-tasks-storage" class="container">
 
+            <!-- Priority employee task row  -->
             <div id="priority-employee-tasks" class="row text-center justify-content-center">
 
                 <!-- EVV/Check In -->
                 <div class="col-lg-4 priority-row">
-                    
                     <button id="btnLocate" class="button" type="button" data-toggle="modal" data-target="#exampleModalLong"><i class="material-icons">schedule</i><p>Check In</p></button>
                 </div>
+
+                <!-- Schedule  -->
                 <div class="col-lg-4 priority-row">
-                        <i class="material-icons">question_answer</i>
-                        <p>Option 1 - Tests</p>
-                    </div>
-                <div class="col-lg-4 priority-row">
-                    <i class="material-icons">date_range</i>
-                    <p>Option 3 - Schudule</p>
+                    <button id="schedule-btn" class="button" type="button""><i class="material-icons">date_range</i>
+                    <p>Schedule</p></button>
                 </div>
+
+                <!-- Daily Activity Check List -->
+                <div class="col-lg-4 priority-row">
+                    <button id="checklist-btn" class="button" type="button""><i class="material-icons">done_outline</i>
+                    <p>Checklist</p></button>
+                </div>
+                
             </div>
 
+            <!-- Secondary employee task row  -->
             <div id="secondary-employee-tasks" class="row text-center justify-content-center">
-                <div class="col-lg-6 secondary-row">
-                    <p>Possible Future Option</p>
+
+                <!-- Tests  -->
+                <div class="col-lg-4 secondary-row">
+                    <button id="learning-btn" class="button" type="button""><i class="material-icons">question_answer</i>
+                    <p>Learning Center</p></button>
                 </div>
+
+                <!-- Possible Future Option HIPPA Info -->
                 <div class="col-lg-6 secondary-row">
-                    <p>Possible Future Option</p>
+                    <a href="https://www.dhcs.ca.gov/formsandpubs/laws/hipaa/Pages/1.00WhatisHIPAA.aspx"><button id="hippa-btn" class="button" type="button""><i class="material-icons">info</i>
+                    <p>HIPPA Information</p></button></a>
                 </div>
+
             </div>
 
         </div>
     </main>
 
-    <footer>
+    <!-- <footer>
         <ul class="nav justify-content-center">
             <li class="nav-item">
                 <a class="nav-link active" href="#">Active</a>
@@ -128,7 +161,7 @@
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
         </ul>
-    </footer>
+    </footer> -->
     <!-- if we want to add the map back uncomment lines 133-137 and see public/js/evv.js and uncomment lines 14-17-->
     <div id="map-storage" class="container" hidden="true">
         <div class="row">
@@ -143,7 +176,14 @@
 
 </html>
 
-<!-- *************************  NOTES  ******************************* -->
+<!-- ***************************  TO DO  ***************************** -->
 
+
+
+
+<!-- *************************  NOTES  ******************************* -->
+<!-- 
+
+-->
 
 
