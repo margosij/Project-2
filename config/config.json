@@ -4,6 +4,7 @@
     "password": "Jamtrick1",
     "database": "exampledb",
     "host": "localhost",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {
@@ -12,6 +13,7 @@
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
+    "port": 3306,
     "logging": false
   },
   "production": {

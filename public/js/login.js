@@ -29,11 +29,14 @@ $(document).ready(function() {
       password: password
     })
       .then(function() {
-        window.location.replace("/members");
+        window.location.replace("/home");
         // If there's an error, log the error
       })
       .catch(function(err) {
         console.log(err);
+        $("#errorLogin").text("*Invalid Username/Password");
+        $("#errorLogin").css("color", "red");
+        $("#errorLogin").css("font-size", "2vh");
       });
   }
 });
