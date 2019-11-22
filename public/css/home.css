@@ -9,21 +9,29 @@ body {
     /* background: darkblue; */
 }
 
-    /* .list-group-item {
-        line-height: 2.5;
-    } */
-/* #map-storage {
-      border: 1px solid red;
-  }
-  
-  #map {
-    height: 150px;
-  } */
-
-
 /* ******** NAVBAR ******* */
-span {
-    color: white;
+.navbar {
+    border-bottom: 3px solid black;
+}
+
+.navbar-toggler {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b));
+    
+}
+
+.navbar-toggler:focus {
+    outline: 0;
+    border: none;
+}
+
+.navbar-brand { 
+    font-size: 2em;
+    margin-left: 10%;
+    margin-top: 1.5%;
+}
+
+.navbar p {
+    color: #021db6;
 }
 
 /* ******** BUTTONS ************  */
@@ -69,14 +77,14 @@ span {
 }
 
 #header {
-    border: 1px solid #5f472d;
+    /* border: 1px solid #5f472d; */
     /* margin-bottom: 3%; */
     /* padding: 5%; */
 }
 
 #logo {
-    border: 1px solid black;
-    padding: 4%;
+    /* border: 1px solid black; */
+    /* padding: 4%; */
 }
 
 #logo-p {
