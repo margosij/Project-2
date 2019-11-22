@@ -3,7 +3,6 @@ $(document).ready(function() {
   var loginForm = $("form.login");
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
-  var nameInput = $("input#name-input");
 
   // When the form is submitted, we validate there's an email and password entered
   loginForm.on("submit", function(event) {
@@ -30,11 +29,14 @@ $(document).ready(function() {
       password: password
     })
       .then(function() {
-        window.location.replace("s");
+        window.location.replace("/home");
         // If there's an error, log the error
       })
       .catch(function(err) {
         console.log(err);
+        $("#errorLogin").text("*Invalid Username/Password");
+        $("#errorLogin").css("color", "red");
+        $("#errorLogin").css("font-size", "2vh");
       });
   }
 });
