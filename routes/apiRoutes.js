@@ -7,7 +7,7 @@
 
 // Requiring our Todo model
 var db = require("../models");
-var passport = require("../config/passport");
+var passport = require("../config/passport.js");
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -92,7 +92,8 @@ module.exports = function(app) {
   app.post("/api/signup", function(req, res) {
     db.User.create({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      employeeName: req.body.employeeName
     })
       .then(function() {
         res.redirect(307, "/api/login");
@@ -118,7 +119,8 @@ module.exports = function(app) {
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
-        id: req.user.id
+        id: req.user.id,
+        employeeName: req.user.employeeName
       });
     }
   });
