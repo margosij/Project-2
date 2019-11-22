@@ -4,7 +4,8 @@
 }
 
 body {
-    background: #0c5c9c;
+    background: #021db6;
+    /* background: darkblue; */
 }
 
 
@@ -23,8 +24,8 @@ body {
 
 
 /* ******** NAVBAR ******* */
-.navbar-brand {
-    color: #198ec4;
+span {
+    color: white;
 }
 
 .button {
@@ -64,7 +65,7 @@ body {
 }
 
 #logo-p {
-    color: #ce750f;
+    color: white;
     font-size: 2em;
     font-weight: bold;
 }
@@ -97,7 +98,7 @@ body {
 
 .material-icons {
     font-size: 2.5em;
-    color: #0c5c9c;
+    color: #021db6;
     /* color: white; */
 }
 
