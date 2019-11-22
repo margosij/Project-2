@@ -3,47 +3,94 @@
     box-sizing: border-box;
 }
 
-.list-group-item {
-    line-height: 2.5;
-  }
+body {
+    /* background: #021db6; */
+    background: rgb(224, 223, 223);
+    /* background: darkblue; */
+}
 
-  #map-storage {
+
+
+    /* .list-group-item {
+        line-height: 2.5;
+    } */
+
+/* #map-storage {
       border: 1px solid red;
   }
   
   #map {
     height: 150px;
-  }
+  } */
 
-  #btnLocate {
-      /* text-align: center; */
-      width: 100%; 
-      border:none; 
-      display:inline-block; 
-      background: white;
-      outline: none;
-  }
 
-  #header {
-    border: 1px solid red;
-    margin-bottom: 5%;
+/* ******** NAVBAR ******* */
+span {
+    color: white;
+}
+
+.button {
+    color: #021db6;
+    /* background: rgb(236, 231, 226); */
+    background: white;
+    width: 95%; 
+    padding: 2%;
+    border: 2px solid #021db6; 
+    border-top: 20px solid navy;
+    display:inline-block; 
+    outline: none;
+    /* box-shadow: 5px 5px #6cbfd8; */
+    box-shadow: 5px 5px #021db6;
+    transform: translateY(4px);
+    border-radius: .40rem;    
+}
+
+.button:hover {
+    background-color: rgb(207, 206, 205);
+}
+
+.button:active {
+    background-color: rgb(158, 151, 151);
+    outline: none;
+    box-shadow: 0 5px #198ec4;
+    transform: translateY(4px);
+    border-radius: .25rem;
+}
+
+.button:focus {
+    outline: 0;
+}
+
+
+#header {
+    border: 1px solid #5f472d;
+    /* margin-bottom: 3%; */
+    /* padding: 5%; */
 }
 
 #logo {
     border: 1px solid black;
+    padding: 4%;
+}
+
+#logo-p {
+    color: navy;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 #employee-tasks-storage {
-    border: 1px solid blue;
+    /* border: 1px solid #a07663; */
     padding: 2%;
 }
 
 #priority-employee-tasks {
-    border: 1px solid orange;
+    /* border: 1px solid #ce750f; */
 }
 
-.priority-row {
-    border: 1px solid purple;
+.priority-row, 
+.secondary-row {
+    /* border: 1px solid #5f472d; */
     padding: 2%;
 
     /* padding-top: 3%; */
@@ -51,14 +98,38 @@
 }
 
 #secondary-employee-tasks {
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 
 .secondary-row {
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
 }
 
 .material-icons {
     font-size: 2.5em;
-    color: purple;
+    color: #021db6;
+    /* color: white; */
 }
+
+/* ****************  Modal Style  ******************** */
+.modal-content {
+    background: rgb(236, 231, 226);
+    color: #0c5c9c;
+    font-size: 1.5em;
+}
+
+.btn-secondary {
+    background: #0c5c9c;
+    box-shadow: 5px 5px #ce750f;
+    border: none;
+  }
+
+  .btn-secondary:hover {
+    background-color: rgb(207, 206, 205);
+  }
+
+  .btn-secondary:active {
+    background-color: rgb(158, 151, 151);
+    box-shadow: 0 5px #198ec4;
+    transform: translateY(4px);
+  }
