@@ -1,3 +1,11 @@
+
+
+body {
+  background: -webkit-gradient(linear, left top,left bottom, color-stop(20%, #000080), color-stop(100%, #6390d3));
+  background-attachment: fixed;
+}
+
+/* *************** Calendar Style**********  */
 [class*="cal-cell"] {
   float: left;
   margin-left: 0;
