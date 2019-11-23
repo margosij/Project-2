@@ -4,8 +4,10 @@
 }
 
 body {
-    background: #e0dfdf;
-
+    /* background: #e0dfdf; */
+    background: -webkit-gradient(linear, left top,left bottom, color-stop(20%, #00812b), color-stop(100%, #9de00c));
+    /* background: -webkit-gradient(linear, left top,left bottom, color-stop(20%, #f7b500), color-stop(100%, #fffb00)); */
+    background-attachment: fixed;
 }
 
 
@@ -16,6 +18,7 @@ body {
 }
 
 #logo {
+    color: #e0dfdf;
     /* border: 1px solid black; */
     /* border-bottom: 3px solid #021db6; */
     /* width: 75%; */
@@ -25,22 +28,26 @@ body {
 } 
 
 .form-storage {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b));
-    border: 5px solid #021db6;
+    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #00812b), color-stop(100%, #9de00c)); */
+    /* background: #021db6; */
+    /* opacity: 0.4; */
+    /* border: 5px solid #021db6; */
     margin-top: 12%;
     padding-top: 5%;
 }
 
 .btn-default {
+    color: #e0dfdf;
     /* color: white; */
     /* background: black; */
-    color: #021db6;
+    /* color: #000080; */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b));
-    border: 2px solid #021db6;
+    border: 3px solid #000080;
     box-shadow: 3px 3px #000080;
 }
 
 .btn-default:hover {
+    color: #000080;
     box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
     -webkit-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
 }
@@ -53,6 +60,25 @@ body {
 
 label {
     margin-bottom: 2%;
+    /* color: #021db6; */
+    /* color: white; */
+    color: #e0dfdf;
+}
+
+.form-control {
+    color: #021db6;
+    border: 3px solid #021db6;
+}
+
+:-webkit-input-placeholder {
+    color: #021db6;
+}
+
+input[type="email"].form-control::-webkit-input-placeholder {
+    color: #021db6;
+}
+
+input[type="password"].form-control::-webkit-input-placeholder {
     color: #021db6;
 }
 
