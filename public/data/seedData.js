@@ -1,36 +1,8 @@
 var taskList = require("./taskList.js");
+var moment = require("moment");
 
 module.exports = {
-  getEmployees: function () {
-    var employees = [
-      {
-        employeeName: "Caren Worker",
-        employeeUsername: "cworker",
-        employeePassword: "password",
-        employeeStatus: "Active",
-        employeeDOB: "2010-01-01",
-        employeeHireDate: "2019-01-02"
-      },
-      {
-        employeeName: "Henry Helper",
-        employeeUsername: "hhelper",
-        employeePassword: "password",
-        employeeStatus: "Active",
-        employeeDOB: "2002-01-01",
-        employeeHireDate: "2019-01-12"
-      },
-      {
-        employeeName: "Dougie Dapper",
-        employeeUsername: "dougie",
-        employeePassword: "password",
-        employeeStatus: "Active",
-        employeeDOB: "1999-01-01",
-        employeeHireDate: "2019-01-20"
-      }
-    ];
-    return employees;
-  },
-  getTests: function () {
+  getTests: function() {
     var testList = [
       {
         testName: "HIPAA",
@@ -54,7 +26,7 @@ module.exports = {
 
     return testList;
   },
-  getQuestions: function () {
+  getQuestions: function() {
     var testQuestions = [
       {
         TestListId: 1,
@@ -131,7 +103,7 @@ module.exports = {
 
     return testQuestions;
   },
-  getClients: function () {
+  getClients: function() {
     var clientList = [
       {
         clientName: "Old Person",
@@ -149,7 +121,7 @@ module.exports = {
 
     return clientList;
   },
-  createCarePlans: function () {
+  createCarePlans: function() {
     function createRandomTasks() {
       var newTaskObject = {
         Monday: {
@@ -160,30 +132,77 @@ module.exports = {
           Eating: {},
           IADL: {}
         },
-        Tuesday: {},
-        Wednesday: {},
-        Thursday: {},
-        Friday: {},
-        Saturday: {},
-        Sunday: {}
+        Tuesday: {
+          Bathing: {},
+          Dressing: {},
+          Mobility: {},
+          Toileting: {},
+          Eating: {},
+          IADL: {}
+        },
+        Wednesday: {
+          Bathing: {},
+          Dressing: {},
+          Mobility: {},
+          Toileting: {},
+          Eating: {},
+          IADL: {}
+        },
+        Thursday: {
+          Bathing: {},
+          Dressing: {},
+          Mobility: {},
+          Toileting: {},
+          Eating: {},
+          IADL: {}
+        },
+        Friday: {
+          Bathing: {},
+          Dressing: {},
+          Mobility: {},
+          Toileting: {},
+          Eating: {},
+          IADL: {}
+        },
+        Saturday: {
+          Bathing: {},
+          Dressing: {},
+          Mobility: {},
+          Toileting: {},
+          Eating: {},
+          IADL: {}
+        },
+        Sunday: {
+          Bathing: {},
+          Dressing: {},
+          Mobility: {},
+          Toileting: {},
+          Eating: {},
+          IADL: {}
+        }
       };
-      newTaskObject.Monday.Bathing[
-        taskList.Bathing[Math.floor(Math.random() * 10)]
-      ] = "";
-      newTaskObject.Monday.Dressing[
-        taskList.Dressing[Math.floor(Math.random() * 7)]
-      ] = "";
-      newTaskObject.Monday.Mobility[
-        taskList.Mobility[Math.floor(Math.random() * 6)]
-      ] = "";
-      newTaskObject.Monday.Toileting[
-        taskList.Toileting[Math.floor(Math.random() * 3)]
-      ] = "";
-      newTaskObject.Monday.Eating[
-        taskList.Eating[Math.floor(Math.random() * 9)]
-      ] = "";
-      newTaskObject.Monday.IADL[taskList.IADL[Math.floor(Math.random() * 13)]] =
-        "";
+
+      Object.keys(newTaskObject).forEach(function(element) {
+        console.log(element);
+        newTaskObject[element].Bathing[
+          taskList.Bathing[Math.floor(Math.random() * 10)]
+        ] = "";
+        newTaskObject[element].Dressing[
+          taskList.Dressing[Math.floor(Math.random() * 7)]
+        ] = "";
+        newTaskObject[element].Mobility[
+          taskList.Mobility[Math.floor(Math.random() * 6)]
+        ] = "";
+        newTaskObject[element].Toileting[
+          taskList.Toileting[Math.floor(Math.random() * 3)]
+        ] = "";
+        newTaskObject[element].Eating[
+          taskList.Eating[Math.floor(Math.random() * 9)]
+        ] = "";
+        newTaskObject[element].IADL[
+          taskList.IADL[Math.floor(Math.random() * 13)]
+        ] = "";
+      });
 
       return newTaskObject;
     }
@@ -205,20 +224,28 @@ module.exports = {
 
     return carePlans;
   },
-  createSchedule: function (carePlans) {
+  createSchedule: function(carePlans) {
     var scheduleList = [];
-    for (let index = 1; index < 4; index++) {
-      for (let i = 0; i < 7; i++) {
-        var today = new Date();
-        var randomStart = (Math.floor(Math.random()*5) + 1)+":00";
-        var randomEnd = (Math.floor(Math.random()*5) + 6)+":00";
+    for (var index = 1; index < 4; index++) {
+      for (var i = 0; i < 7; i++) {
+        var randomStart = Math.floor(Math.random() * 5) + 1 + ":00";
+        var randomEnd = Math.floor(Math.random() * 5) + 6 + ":00";
+        var dayName = moment()
+          .add(i, "days")
+          .format("dddd")
+          .toString()
+          .trim();
         var newScheduleItem = {
-          shiftDate: today.setDate(today.getDate() + i),
+          shiftDate: moment()
+            .add(i, "days")
+            .subtract(5, "hours"),
           shiftStartTime: randomStart,
           shiftEndTime: randomEnd,
-          EmployeeId: index,
+          //UserId: index,
           ClientId: index,
-          shiftRecord: JSON.stringify(carePlans[index-1])
+          shiftRecord: JSON.stringify(
+            JSON.parse(carePlans[index - 1].taskObject)[dayName]
+          )
         };
         scheduleList.push(newScheduleItem);
       }
