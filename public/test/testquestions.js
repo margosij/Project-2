@@ -2,48 +2,54 @@
 
 var displayTest = $("#displayTest");
 var submitTest = $("#submitTest");
+var next = $("#nextQuestion");
 
 var correct = 0;
 var wrong = 0;
+var currentQuestion = 0;
 
 submitTest.hide();
 displayTest.hide();
+next.hide();
+
 $("#answerQuestions").hide();
 
 $("#beginTest").on("click", startFunction);
 $("#submitTest").on("click", results);
+$("#nextQuestion").on("click", nextButton);
 
 function startFunction() {
   displayTest.show();
   submitTest.show();
+  next.show();
   $("#beginTest").hide();
 }
-
+console.log($(displayTest.children("input:checked")));
 function results() {
   selectedAnswers = $(displayTest.children("input:checked"));
   for (var i = 0; i < selectedAnswers.length; i++) {
-    if (selectedAnswers.length < 10 || selectedAnswers.length === 0) {
-      $("#modalMatch").modal("toggle");
-    } else {
-      displayTest.hide();
-      submitTest.hide();
+    // if (selectedAnswers.length < 10 || selectedAnswers.length === 0) {
+    //   $("#modalMatch").modal("toggle");
+    // } else {
+    //   displayTest.hide();
+    //   submitTest.hide();
 
-      $("#correct")
-        .text("Answers right: " + correct)
-        .show();
-      $("#incorrect")
-        .text("Wrong answers: " + wrong)
-        .show();
-      if (selectedAnswers[i].value === dailyLiving[i].correctAnswer) {
-        correct++;
-        $("#correct").text("Answers right: " + correct);
-      } else {
-        wrong++;
-        $("#incorrect").text("Wrong answers: " + wrong);
-      }
+    $("#correct")
+      .text("Answers right: " + correct)
+      .show();
+    $("#incorrect")
+      .text("Wrong answers: " + wrong)
+      .show();
+    if (selectedAnswers[i].value === dailyLiving[i].correctAnswer) {
+      correct++;
+      $("#correct").text("Answers right: " + correct);
+    } else {
+      wrong++;
+      $("#incorrect").text("Wrong answers: " + wrong);
     }
   }
 }
+// }
 
 var dailyLiving = [
   {
@@ -144,20 +150,61 @@ var dailyLiving = [
   }
 ];
 
-//formula for displaying the questions and their answers
-for (var i = 0; i < dailyLiving.length; i++) {
-  displayTest.append("<p>" + dailyLiving[i].question + "</p>");
-  for (var j = 0; j < dailyLiving[i].answers.length; j++) {
+// formula for displaying the questions and their answers
+// for (var i = 0; i < dailyLiving.length; i++) {
+//   displayTest.append("<p>" + dailyLiving[i].question + "</p>");
+//   for (var j = 0; j < dailyLiving[i].answers.length; j++) {
+//     displayTest.append(
+//       // eslint-disable-next-line quotes
+//       '<input type="radio" name="answers-' +
+//         i +
+//         // eslint-disable-next-line quotes
+//         '"value="' +
+//         dailyLiving[i].answers[j] +
+//         // eslint-disable-next-line quotes
+//         '">' +
+//         dailyLiving[i].answers[j]
+//     );
+//   }
+// }
+function startTest() {
+  displayTest.html(
+    "<h2>" + dailyLiving[this.currentQuestion].question + "</h2>"
+  );
+  for (var i = 0; i < dailyLiving[this.currentQuestion].answers.length; i++) {
     displayTest.append(
       // eslint-disable-next-line quotes
       '<input type="radio" name="answers-' +
         i +
         // eslint-disable-next-line quotes
         '"value="' +
-        dailyLiving[i].answers[j] +
+        dailyLiving[this.currentQuestion].answers[i] +
         // eslint-disable-next-line quotes
         '">' +
-        dailyLiving[i].answers[j]
+        dailyLiving[this.currentQuestion].answers[i]
     );
+  }
+}
+
+function nextButton() {
+  displayTest.html(
+    "<h2>" + dailyLiving[currentQuestion + 1].question + "</h2>"
+  );
+  for (var i = 0; i < dailyLiving[currentQuestion + 1].answers.length; i++) {
+    displayTest.append(
+      // eslint-disable-next-line quotes
+      '<input type="radio" name="answers-' +
+        i +
+        // eslint-disable-next-line quotes
+        '"value="' +
+        dailyLiving[currentQuestion + 1].answers[i] +
+        // eslint-disable-next-line quotes
+        '">' +
+        dailyLiving[currentQuestion + 1].answers[i]
+    );
+  }
+  currentQuestion++;
+  if (currentQuestion === 9) {
+    next.hide();
   }
 }
