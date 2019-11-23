@@ -3,20 +3,29 @@
 }
 
 body {
+    background: -webkit-gradient(linear, left top,left bottom, color-stop(15%, #000080), color-stop(100%, #6390d3));
+    background-attachment: fixed;
     /* background: #021db6; */
-    background: #e0dfdf;
+    /* background: #e0dfdf; */
     /* background: white; */
     /* background: darkblue; */
 }
 
 /* ******** NAVBAR ******* */
 .navbar {
-    border-bottom: 3px solid black;
+    /* border-bottom: 3px solid black; */
 }
 
 .navbar-toggler {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b));
-    
+    box-shadow: 3px 3px 10px #C0C0C0;
+}
+
+.navbar-toggler:hover {
+    border: 2px solid #000080;
+    border-top: 3px solid #021db6;
+    box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -webkit-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
 }
 
 .navbar-toggler:focus {
@@ -31,7 +40,8 @@ body {
 }
 
 .navbar p {
-    color: #021db6;
+    color: #e0dfdf;
+    /* color: #021db6; */
 }
 
 /* ******** BUTTONS ************  */
@@ -41,14 +51,16 @@ body {
     /* background: rgb(236, 231, 226); */
     /* background: white; */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b));
+    /* background-image: radial-gradient(#9de00c 25%, #00812b 90%); */
     width: 95%; 
     padding: 2%;
-    border: 2px solid #000080; 
+    /* border: 2px solid #000080;  */
+    border: 2px solid #000080;
     border-top: 20px solid #021db6;
     display:inline-block; 
     outline: none;
     /* box-shadow: 5px 5px #6cbfd8; */
-    box-shadow: 5px 5px #000080;
+    box-shadow: 5px 5px 12px #C0C0C0;
     transform: translateY(4px);
     border-radius: .40rem; 
     

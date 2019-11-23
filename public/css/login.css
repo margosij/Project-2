@@ -5,8 +5,8 @@
 
 body {
     /* background: #e0dfdf; */
-    background: -webkit-gradient(linear, left top,left bottom, color-stop(20%, #00812b), color-stop(100%, #9de00c));
-    /* background: -webkit-gradient(linear, left top,left bottom, color-stop(20%, #f7b500), color-stop(100%, #fffb00)); */
+    /* background: -webkit-gradient(linear, left top,left bottom, color-stop(20%, #00812b), color-stop(100%, #9de00c)); */
+    background: -webkit-gradient(linear, left top,left bottom, color-stop(20%, #000080), color-stop(100%, #6390d3));
     background-attachment: fixed;
 }
 
@@ -28,7 +28,9 @@ body {
 } 
 
 .form-storage {
-    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #00812b), color-stop(100%, #9de00c)); */
+    /* background-image: radial-gradient(#9de00c 5%, #00812b 90%); */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #00812b), color-stop(100%, #9de00c));
+    box-shadow: 50px 50px 200px 50px #C0C0C0;
     /* background: #021db6; */
     /* opacity: 0.4; */
     /* border: 5px solid #021db6; */
@@ -37,13 +39,13 @@ body {
 }
 
 .btn-default {
-    color: #e0dfdf;
+    color: #000080;
     /* color: white; */
-    /* background: black; */
+    background: #C0C0C0;
     /* color: #000080; */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b));
+    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b)); */
     border: 3px solid #000080;
-    box-shadow: 3px 3px #000080;
+    box-shadow: 5px 5px 10px #000080;
 }
 
 .btn-default:hover {
