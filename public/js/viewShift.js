@@ -6,6 +6,9 @@ $(document).ready(function() {
     $.ajax({
       url: "/api/shiftRecord/" + userData.id,
       type: "GET"
-    }).then(function(shiftData) {});
+    }).then(function(shift) {
+      var shiftTasks = shift.shiftRecord;
+      console.log(JSON.stringify(shiftTasks));
+    });
   });
 });
