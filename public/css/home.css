@@ -3,7 +3,12 @@
 }
 
 body {
+
+/* *************  ROYAL BLUE ON TOP ************  */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #0000c2), color-stop(100%, #002357));
+
+/* *************  DARK BLUE ON TOP ************** */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #002357), color-stop(70%, #0000c2));
     background-attachment: fixed;
     /* background: #021db6; */
     /* background: #e0dfdf; */
@@ -54,11 +59,11 @@ body {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b));
     /* background-image: radial-gradient(#9de00c 25%, #00812b 90%); */
     width: 95%; 
-    padding: 4%;
+    padding: 2%;
     /* border: 2px solid #000080;  */
     /* border: 2px solid #000080; */
     ;
-    /* border-top: 20px solid #021db6; */
+    border-top: 20px solid #000080;
     ;
     display:inline-block; 
     outline: none;

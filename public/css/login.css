@@ -3,8 +3,15 @@
 }
 body {
     /* background: #e0dfdf; */
+
+/* ********  GREEN  MODE  ********** */
     /* background: -webkit-gradient(linear, left top,left bottom, color-stop(20%, #00812b), color-stop(100%, #9de00c)); */
+
+/* **********  LIGHT BLUE TOP  *********** */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #0000c2), color-stop(100%, #002357));
+
+/* **********  DARK BLUE TOP ************* */
+    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #002357), color-stop(80%, #0000c2)); */
     background-attachment: fixed;
 }
 #header {
@@ -27,6 +34,7 @@ body {
     /* border: 2px solid #021db6; */
     margin-top: 12%;
     padding-top: 5%;
+    border-radius: .70rem; 
     /* Different gradient  */
     /* background-image: radial-gradient(#9de00c 5%, #00812b 90%); */
 /* *********GOLD MODE*********  */
