@@ -32,9 +32,13 @@ body {
     background: -webkit-gradient(linear, right bottom, left top, color-stop(5%, #00812b), color-stop(85%, #9de00c));
     box-shadow: 0px 0px 200px 30px #C0C0C0;
     /* border: 2px solid #021db6; */
+    width: 95%;
+    margin-left: 2.5%;
     margin-top: 12%;
     padding-top: 5%;
     border-radius: .70rem; 
+    border-top: 20px solid #000080;
+
     /* Different gradient  */
     /* background-image: radial-gradient(#9de00c 5%, #00812b 90%); */
 /* *********GOLD MODE*********  */
