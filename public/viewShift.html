@@ -1,45 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-  <link rel="stylesheet" href="css/calendar.css">
-  <script src="https://momentjs.com/downloads/moment.js"></script>
-  <link href="css/style.css" rel="stylesheet">
+  <title>jQuery UI Accordion - Default functionality</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <script>
+    $(function () {
+      $("#accordion").accordion({
+        heightStyle: "content"
+      });
+    });
+  </script>
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-6">
+          <h2>Shift Data</h2>
+          <hr>
+          <hr>
       </div>
     </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Shift Info</h2>
-        
-      </div>
-    </div>
-    <div class="row">
-        <div id="shiftTasks" class="col-md-6 col-md-offset-3">
-          
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <div id="accordion">
+          <h3 id="titleBathing">Bathing</h3>
+          <div>
+            <p id="tasksBathing"></p>
+          </div>
+          <h3 id="titleToileting">Toileting</h3>
+          <div>
+            <p id="tasksToileting"></p>
+          </div>
+          <h3 id="titleMobility">Mobility</h3>
+          <div>
+            <p id="tasksMobility"></p>
+          </div>
+          <h3 id="titleEating">Eating</h3>
+          <div>
+            <p id="tasksEating"></p>
+          </div>
+          <h3 id="titleDressing">Dressing</h3>
+          <div>
+            <p id="tasksDressing"></p>
+          </div>
+          <h3 id="titleIADL">IADL</h3>
+          <div>
+            <p id="tasksIADL"></p>
+          </div>
         </div>
       </div>
-
-    <!-- <script type="text/javascript" src="js/vendor/jquery-1.9.1.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>\
+    </div>
   </div>
-
-  <script type="text/javascript" src="js/viewShift.js"></script>
-
+  <script src="js/viewShift.js" type="text/javascript"></script>
 </body>
 
 </html>
