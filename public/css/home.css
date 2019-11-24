@@ -6,10 +6,12 @@ body {
 
 /* *************  ROYAL BLUE ON TOP ************  */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #0000c2), color-stop(100%, #002357));
+    background-attachment: fixed;
+
 
 /* *************  DARK BLUE ON TOP ************** */
     /* background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #002357), color-stop(70%, #0000c2)); */
-    background-attachment: fixed;
+
     /* background: #021db6; */
     /* background: #e0dfdf; */
     /* background: white; */
@@ -39,21 +41,21 @@ body {
 }
 
 .navbar-brand { 
-    color: #C0C0C0;
+    /* color: #C0C0C0; */
     font-size: 2em;
     margin-left: 10%;
     margin-top: 1.5%;
 }
 
 .navbar p {
-    color: #e0dfdf;
+    color: #C0C0C0;
     /* color: #021db6; */
 }
 
 /* ******** BUTTONS ************  */
 
 .button {
-    color: navy;
+    color: #002357;
     /* background: rgb(236, 231, 226); */
     /* background: white; */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b));
@@ -108,7 +110,7 @@ body {
 }
 
 #logo-p {
-    color: navy;
+    color: #002357;
     font-size: 2em;
     font-weight: bold;
 }
@@ -148,22 +150,22 @@ body {
 .modal-content {
     background: rgb(224, 223, 223);
     color: #0c5c9c;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .btn-secondary {
-    color: #000080;
+    color: #002357;
     /* background: #0c5c9c; */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b));
-    box-shadow: 5px 5px navy;
+    box-shadow: 5px 5px #002357;
     border: none;
 }
 
 /* .btn-secondary:hover {
 background-color: rgb(207, 206, 205);
-} */
+}
 
-/* .btn-secondary:active {
+.btn-secondary:active {
 background-color: rgb(158, 151, 151);
 box-shadow: 0 5px #198ec4;
 transform: translateY(4px);
