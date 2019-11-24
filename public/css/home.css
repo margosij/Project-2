@@ -3,7 +3,7 @@
 }
 
 body {
-    background: -webkit-gradient(linear, left top,left bottom, color-stop(15%, #000080), color-stop(100%, #6390d3));
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #0000c2), color-stop(100%, #002357));
     background-attachment: fixed;
     /* background: #021db6; */
     /* background: #e0dfdf; */
@@ -18,7 +18,7 @@ body {
 
 .navbar-toggler {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b));
-    box-shadow: 3px 3px 10px #C0C0C0;
+    box-shadow: 0px 0px 15px 4px #C0C0C0;
 }
 
 .navbar-toggler:hover {
@@ -34,6 +34,7 @@ body {
 }
 
 .navbar-brand { 
+    color: #C0C0C0;
     font-size: 2em;
     margin-left: 10%;
     margin-top: 1.5%;
@@ -53,14 +54,16 @@ body {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b));
     /* background-image: radial-gradient(#9de00c 25%, #00812b 90%); */
     width: 95%; 
-    padding: 2%;
+    padding: 4%;
     /* border: 2px solid #000080;  */
-    border: 2px solid #000080;
-    border-top: 20px solid #021db6;
+    /* border: 2px solid #000080; */
+    ;
+    /* border-top: 20px solid #021db6; */
+    ;
     display:inline-block; 
     outline: none;
     /* box-shadow: 5px 5px #6cbfd8; */
-    box-shadow: 5px 5px 12px #C0C0C0;
+    box-shadow: 0px 0px 15px 4px #C0C0C0;
     transform: translateY(4px);
     border-radius: .40rem; 
     
