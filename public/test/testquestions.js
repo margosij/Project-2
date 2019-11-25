@@ -1,47 +1,62 @@
-// var mysql = require("mysql");
-
 var displayTest = $("#displayTest");
 var submitTest = $("#submitTest");
+var next = $("#nextQuestion");
 
 var correct = 0;
 var wrong = 0;
+var currentQuestion = 0;
 
 submitTest.hide();
 displayTest.hide();
+next.hide();
+
+var selectedAnswers = [];
+
 $("#answerQuestions").hide();
+$("#instructions").hide();
 
 $("#beginTest").on("click", startFunction);
 $("#submitTest").on("click", results);
+$("#nextQuestion").on("click", nextButton);
 
 function startFunction() {
   displayTest.show();
-  submitTest.show();
+  next.show();
+  $("#instructions").show();
   $("#beginTest").hide();
 }
 
 function results() {
-  selectedAnswers = $(displayTest.children("input:checked"));
-  for (var i = 0; i < selectedAnswers.length; i++) {
-    if (selectedAnswers.length < 10 || selectedAnswers.length === 0) {
-      $("#modalMatch").modal("toggle");
-    } else {
-      displayTest.hide();
-      submitTest.hide();
+  selectedAnswers = $(displayTest.find("input:checked"));
+  // for (var i = 0; i < selectedAnswers.length; i++) {
+  //   if (selectedAnswers.length < 10 || selectedAnswers.length === 0) {
+  //     $("#modalMatch").modal("toggle");
+  //   } else {
+  //     displayTest.hide();
+  //     submitTest.hide();
+  //   }
+  // }
 
-      $("#correct")
-        .text("Answers right: " + correct)
-        .show();
-      $("#incorrect")
-        .text("Wrong answers: " + wrong)
-        .show();
-      if (selectedAnswers[i].value === dailyLiving[i].correctAnswer) {
-        correct++;
-        $("#correct").text("Answers right: " + correct);
-      } else {
-        wrong++;
-        $("#incorrect").text("Wrong answers: " + wrong);
-      }
-    }
+  if (
+    selectedAnswers[0].value === dailyLiving[currentQuestion - 1].correctAnswer
+  ) {
+    correct++;
+    $("#correct").text("Answers right: " + correct);
+  } else {
+    wrong++;
+    $("#incorrect").text("Wrong answers: " + wrong);
+  }
+
+  $("#correct").text("Answers right: " + correct);
+  // .show();
+  $("#incorrect").text("Wrong answers: " + wrong);
+  // .show();
+  if (currentQuestion === 10) {
+    alert(
+      "End of test! You scored a " +
+        (parseFloat(correct) / dailyLiving.length) * 100 +
+        "%"
+    );
   }
 }
 
@@ -144,20 +159,32 @@ var dailyLiving = [
   }
 ];
 
-//formula for displaying the questions and their answers
-for (var i = 0; i < dailyLiving.length; i++) {
-  displayTest.append("<p>" + dailyLiving[i].question + "</p>");
-  for (var j = 0; j < dailyLiving[i].answers.length; j++) {
+function nextButton() {
+  $("#correct").hide();
+  $("#incorrect").hide();
+  $("#instructions").hide();
+  if (currentQuestion > 0) {
+    results();
+  }
+  displayTest.html("<h2>" + dailyLiving[currentQuestion].question + "</h2>");
+  for (var i = 0; i < dailyLiving[currentQuestion].answers.length; i++) {
     displayTest.append(
       // eslint-disable-next-line quotes
-      '<input type="radio" name="answers-' +
-        i +
+      '<hr><label class="radio-inline pr-4"><input type="radio" name="answers-' +
+        currentQuestion +
         // eslint-disable-next-line quotes
         '"value="' +
-        dailyLiving[i].answers[j] +
+        dailyLiving[currentQuestion].answers[i] +
         // eslint-disable-next-line quotes
         '">' +
-        dailyLiving[i].answers[j]
+        dailyLiving[currentQuestion].answers[i] +
+        "</label>"
     );
+  }
+
+  currentQuestion++;
+  if (currentQuestion === 10) {
+    next.hide();
+    submitTest.show();
   }
 }
