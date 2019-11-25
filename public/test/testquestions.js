@@ -21,37 +21,44 @@ $("#nextQuestion").on("click", nextButton);
 
 function startFunction() {
   displayTest.show();
-  submitTest.show();
   next.show();
   $("#instructions").show();
   $("#beginTest").hide();
 }
-// console.log($(displayTest.children("input:checked")));
-function results() {
-  selectedAnswers = $(displayTest.children("input:checked"));
-  for (var i = 0; i < selectedAnswers.length; i++) {
-    // if (selectedAnswers.length < 10 || selectedAnswers.length === 0) {
-    //   $("#modalMatch").modal("toggle");
-    // } else {
-    //   displayTest.hide();
-    //   submitTest.hide();
 
-    $("#correct")
-      .text("Answers right: " + correct)
-      .show();
-    $("#incorrect")
-      .text("Wrong answers: " + wrong)
-      .show();
-    if (selectedAnswers[i].value === dailyLiving[i].correctAnswer) {
-      correct++;
-      $("#correct").text("Answers right: " + correct);
-    } else {
-      wrong++;
-      $("#incorrect").text("Wrong answers: " + wrong);
-    }
+function results() {
+  selectedAnswers = $(displayTest.find("input:checked"));
+  // for (var i = 0; i < selectedAnswers.length; i++) {
+  //   if (selectedAnswers.length < 10 || selectedAnswers.length === 0) {
+  //     $("#modalMatch").modal("toggle");
+  //   } else {
+  //     displayTest.hide();
+  //     submitTest.hide();
+  //   }
+  // }
+
+  if (
+    selectedAnswers[0].value === dailyLiving[currentQuestion - 1].correctAnswer
+  ) {
+    correct++;
+    $("#correct").text("Answers right: " + correct);
+  } else {
+    wrong++;
+    $("#incorrect").text("Wrong answers: " + wrong);
+  }
+
+  $("#correct").text("Answers right: " + correct);
+  // .show();
+  $("#incorrect").text("Wrong answers: " + wrong);
+  // .show();
+  if (currentQuestion === 10) {
+    alert(
+      "End of test! You scored a " +
+        (parseFloat(correct) / dailyLiving.length) * 100 +
+        "%"
+    );
   }
 }
-// }
 
 var dailyLiving = [
   {
@@ -152,78 +159,32 @@ var dailyLiving = [
   }
 ];
 
-// // formula for displaying the questions and their answers
-// for (var i = 0; i < dailyLiving.length; i++) {
-//   displayTest.append("<p>" + dailyLiving[i].question + "</p>");
-//   for (var j = 0; j < dailyLiving[i].answers.length; j++) {
-//     displayTest.append(
-//       // eslint-disable-next-line quotes
-//       '<input type="radio" name="answers-' +
-//         i +
-//         // eslint-disable-next-line quotes
-//         '"value="' +
-//         dailyLiving[i].answers[j] +
-//         // eslint-disable-next-line quotes
-//         '">' +
-//         dailyLiving[i].answers[j]
-//     );
-//   }
-// }
-
-// function startTest() {
-//   displayTest.html("<h2>" + dailyLiving[currentQuestion].question + "</h2>");
-//   for (var i = 0; i < dailyLiving[currentQuestion].answers.length; i++) {
-//     displayTest.append(
-//       // eslint-disable-next-line quotes
-//       '<input type="radio" name="answers-' +
-//         i +
-//         // eslint-disable-next-line quotes
-//         '"value="' +
-//         dailyLiving[currentQuestion].answers[i] +
-//         // eslint-disable-next-line quotes
-//         '">' +
-//         dailyLiving[currentQuestion].answers[i]
-//     );
-//   }
-// }
-
 function nextButton() {
+  $("#correct").hide();
+  $("#incorrect").hide();
   $("#instructions").hide();
-  //create an array to push clicked answers to then compare it to the answers array maybe?
+  if (currentQuestion > 0) {
+    results();
+  }
   displayTest.html("<h2>" + dailyLiving[currentQuestion].question + "</h2>");
   for (var i = 0; i < dailyLiving[currentQuestion].answers.length; i++) {
     displayTest.append(
       // eslint-disable-next-line quotes
-      '<input type="radio" name="answers-' +
-        i +
+      '<hr><label class="radio-inline pr-4"><input type="radio" name="answers-' +
+        currentQuestion +
         // eslint-disable-next-line quotes
         '"value="' +
         dailyLiving[currentQuestion].answers[i] +
         // eslint-disable-next-line quotes
         '">' +
-        dailyLiving[currentQuestion].answers[i]
+        dailyLiving[currentQuestion].answers[i] +
+        "</label>"
     );
   }
-  selectedAnswers = selectedAnswers.push(
-    $(displayTest.children("input:checked"))
-  );
-  for (var i = 0; i < selectedAnswers.length; i++) {
-    $("#correct");
-    // .text("Answers right: " + correct)
-    // .show();
-    $("#incorrect");
-    // .text("Wrong answers: " + wrong)
-    // .show();
-    if (selectedAnswers[i].value === dailyLiving[i].correctAnswer) {
-      correct++;
-      // $("#correct").text("Answers right: " + correct);
-    } else {
-      wrong++;
-      // $("#incorrect").text("Wrong answers: " + wrong);
-    }
-  }
+
   currentQuestion++;
   if (currentQuestion === 10) {
     next.hide();
+    submitTest.show();
   }
 }
