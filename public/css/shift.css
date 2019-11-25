@@ -7,20 +7,10 @@ body {
 /* *************  ROYAL BLUE ON TOP ************  */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #0000c2), color-stop(100%, #002357));
   background-attachment: fixed;
-
-/* *************  DARK BLUE ON TOP ************** */
-  /* background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #002357), color-stop(70%, #0000c2)); */
-
-  /* background: #021db6; */
-  /* background: #e0dfdf; */
-  /* background: white; */
-  /* background: darkblue; */
 }
 
 /* ******** NAVBAR ******* */
 .navbar {
-  /* border: 3px solid black; */
-  /* width: 100%; */
   padding: 0;
 }
 
@@ -74,7 +64,7 @@ nav .navbar-nav li a {
 .navbar p {
   font-family: 'Oswald', sans-serif;
   font-weight: 600;
-  color: #C0C0C0;
+  color: #c0c0c0;
   /* color: #021db6; */
 }
 
