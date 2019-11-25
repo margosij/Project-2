@@ -183,25 +183,26 @@ module.exports = {
       };
 
       Object.keys(newTaskObject).forEach(function(element) {
-        console.log(element);
-        newTaskObject[element].Bathing[
-          taskList.Bathing[Math.floor(Math.random() * 10)]
-        ] = "";
-        newTaskObject[element].Dressing[
-          taskList.Dressing[Math.floor(Math.random() * 7)]
-        ] = "";
-        newTaskObject[element].Mobility[
-          taskList.Mobility[Math.floor(Math.random() * 6)]
-        ] = "";
-        newTaskObject[element].Toileting[
-          taskList.Toileting[Math.floor(Math.random() * 3)]
-        ] = "";
-        newTaskObject[element].Eating[
-          taskList.Eating[Math.floor(Math.random() * 9)]
-        ] = "";
-        newTaskObject[element].IADL[
-          taskList.IADL[Math.floor(Math.random() * 13)]
-        ] = "";
+        for (var i = 0; i < 5; i++) {
+          newTaskObject[element].Bathing[
+            taskList.Bathing[Math.floor(Math.random() * 10)]
+          ] = "";
+          newTaskObject[element].Dressing[
+            taskList.Dressing[Math.floor(Math.random() * 7)]
+          ] = "";
+          newTaskObject[element].Mobility[
+            taskList.Mobility[Math.floor(Math.random() * 6)]
+          ] = "";
+          newTaskObject[element].Toileting[
+            taskList.Toileting[Math.floor(Math.random() * 3)]
+          ] = "";
+          newTaskObject[element].Eating[
+            taskList.Eating[Math.floor(Math.random() * 9)]
+          ] = "";
+          newTaskObject[element].IADL[
+            taskList.IADL[Math.floor(Math.random() * 13)]
+          ] = "";
+        }
       });
 
       return newTaskObject;
