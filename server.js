@@ -42,8 +42,7 @@ db.sequelize.sync({ force: true }).then(function() {
       PORT
     );
     var carePlans = [];
-    db.Employee.bulkCreate(seedData.getEmployees())
-      .then(db.TestList.bulkCreate(seedData.getTests()))
+    db.TestList.bulkCreate(seedData.getTests())
       .then(db.TestQuestion.bulkCreate(seedData.getQuestions()))
       .then(db.Client.bulkCreate(seedData.getClients()))
       .then(function() {

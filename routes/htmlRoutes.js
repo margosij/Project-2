@@ -64,4 +64,8 @@ module.exports = function(app) {
   app.get("/schedule", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/viewSchedule.html"));
   });
+
+  app.get("/shift", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/viewShift.html"));
+  });
 };
