@@ -89,7 +89,7 @@ body {
 /* ******** BUTTONS ************  */
 
 .button {
-    color: #002357;
+    /* color: #002357; */
     /* background: rgb(236, 231, 226); */
     /* background: white; */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b));
