@@ -1,5 +1,15 @@
 //Inititializing JS on document ready
 $(document).ready(function() {
+  //rerouting links on home page
+  $("#schedule-btn").click(function() {
+    window.location.href = "./viewSchedule.html";
+  });
+  $("#checklist-btn").click(function() {
+    window.location.href = "./viewShift.html";
+  });
+  $("#learning-btn").click(function() {
+    window.location.href = "./testList.html";
+  });
   //setting global variables for latitude and longitude to pass through yelp Ajax Request
   var latitude;
   var longitude;
@@ -82,3 +92,5 @@ $(document).ready(function() {
     });
   }
 });
+
+//Building functionality for home page on-click events

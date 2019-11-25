@@ -2,12 +2,36 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Accordion - Default functionality</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <!-- BOOTSTRAP CDN -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- RESET.CSS  -->
+  <link rel="stylesheet" href="css/reset.css">
+
+  <!-- MATERIAL ICONS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- GOOGLE FONTS  -->
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+
+  <!-- HOME.CSS  -->
+  <link rel="stylesheet" href="css/shift.css" media="screen">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- BOOTSTRAP SCRIPTS  -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+
+  <title>Passport Authentication</title>
+
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -19,49 +43,101 @@
       });
     });
   </script>
+
 </head>
 
 <body>
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-6">
-          <h2>Shift Data</h2>
-          <hr>
-          <hr>
-      </div>
+  <!--Navbar-->
+  <nav class="navbar navbar-light navbar-5 white">
+
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#">
+      <p>LOGO</p>
+    </a>
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent15" aria-controls="navbarSupportedContent15" aria-expanded="false"
+      aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent15">
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto text-center">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Check In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/schedule">Schedule</a>
+        </li>
+      </ul>
+      <!-- Links -->
+
     </div>
-    <div class="row justify-content-center">
-      <div class="col-6">
-        <div id="accordion">
-          <h3 id="titleBathing">Bathing</h3>
-          <div>
-            <p id="tasksBathing"></p>
-          </div>
-          <h3 id="titleToileting">Toileting</h3>
-          <div>
-            <p id="tasksToileting"></p>
-          </div>
-          <h3 id="titleMobility">Mobility</h3>
-          <div>
-            <p id="tasksMobility"></p>
-          </div>
-          <h3 id="titleEating">Eating</h3>
-          <div>
-            <p id="tasksEating"></p>
-          </div>
-          <h3 id="titleDressing">Dressing</h3>
-          <div>
-            <p id="tasksDressing"></p>
-          </div>
-          <h3 id="titleIADL">IADL</h3>
-          <div>
-            <p id="tasksIADL"></p>
+    <!-- Collapsible content -->
+
+  </nav>
+  <!--/.Navbar-->
+
+  <!-- <h1>This is the active test page</h1> -->
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h2>Shift Info</h2>
+          <hr>
+          <hr>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div id="accordion">
+            <h3 id="titleBathing">Bathing</h3>
+            <div>
+              <ul id="tasksBathing" class="list-group">
+
+              </ul>
+            </div>
+            <h3 id="titleToileting">Toileting</h3>
+            <div>
+              <ul id="tasksToileting" class="list-group">
+
+              </ul>
+            </div>
+            <h3 id="titleMobility">Mobility</h3>
+            <div>
+              <ul id="tasksMobility" class="list-group">
+
+              </ul>
+            </div>
+            <h3 id="titleEating">Eating</h3>
+            <div>
+              <ul id="tasksEating" class="list-group">
+
+              </ul>
+            </div>
+            <h3 id="titleDressing">Dressing</h3>
+            <div>
+              <ul id="tasksDressing" class="list-group">
+
+              </ul>
+            </div>
+            <h3 id="titleIADL">IADL</h3>
+            <div>
+              <ul id="tasksIADL" class="list-group">
+
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <script src="js/viewShift.js" type="text/javascript"></script>
-</body>
+    <script src="js/viewShift.js" type="text/javascript"></script>
+  </body>
 
 </html>
