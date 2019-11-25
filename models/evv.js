@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
   var EVVRecord = sequelize.define("EVVRecord", {
     shiftDate: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
       len: [1]
     },
@@ -48,7 +48,7 @@ module.exports = function(sequelize, DataTypes) {
   EVVRecord.associate = function(models) {
     // We're saying that a Post should belong to an Author
     // A Post can't be created without an Author due to the foreign key constraint
-    EVVRecord.belongsTo(models.Employee, {
+    EVVRecord.belongsTo(models.User, {
       foreignKey: {
         //needs to be changed later to false once we get the login set up
         allowNull: true

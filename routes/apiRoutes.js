@@ -8,6 +8,9 @@
 // Requiring our Todo model
 var db = require("../models");
 var passport = require("../config/passport.js");
+var moment = require("moment");
+var Sequelize = require("sequelize");
+var Op = Sequelize.Op;
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -23,17 +26,6 @@ module.exports = function(app) {
     db.Post.findAll({
       where: {
         category: req.params.category
-      }
-    }).then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
-
-  // Get route for retrieving a single post
-  app.get("/api/posts/:id", function(req, res) {
-    db.Post.findOne({
-      where: {
-        id: req.params.id
       }
     }).then(function(dbPost) {
       res.json(dbPost);
@@ -72,13 +64,44 @@ module.exports = function(app) {
       res.json(dbPost);
     });
   });
-  // POST route for saving a new post
-  app.post("/api/EVVRecord", function(req, res) {
-    db.EVVRecord.create({
-      longitude: req.body.longitude,
-      latitude: req.body.latitude
-    }).then(function(dbEVVRecord) {
+
+  // Get route for retrieving a single post
+  app.get("/api/shiftRecord/:id", function(req, res) {
+    db.EVVRecord.findOne({
+      where: {
+        ClientId: req.params.id,
+        shiftDate: {
+          [Op.gte]: moment().subtract(12, "hours"),
+          [Op.lte]: moment().add(12, "hours")
+        }
+      }
+    }).then(function(dbShift) {
+      res.json(dbShift);
+    });
+  });
+
+  // PUT route for saving a new post
+  app.put("/api/EVVRecord", function(req, res) {
+    db.EVVRecord.update(
+      {
+        checkInLongitude: req.body.checkInLongitude,
+        checkInLatitude: req.body.checkInLatitude,
+        checkInTime: req.body.checkInTime
+      },
+      { where: { id: req.body.id } }
+    ).then(function(dbEVVRecord) {
       res.json(dbEVVRecord);
+    });
+  });
+
+  app.get("/api/shifts/:id", function(req, res) {
+    db.EVVRecord.findAll({
+      where: {
+        ClientId: req.params.id
+      },
+      include: [db.Client]
+    }).then(function(dbShifts) {
+      res.json(dbShifts);
     });
   });
 

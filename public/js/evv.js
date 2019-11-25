@@ -1,5 +1,15 @@
 //Inititializing JS on document ready
 $(document).ready(function() {
+  //rerouting links on home page
+  $("#schedule-btn").click(function() {
+    window.location.href = "./viewSchedule.html";
+  });
+  $("#checklist-btn").click(function() {
+    window.location.href = "./viewShift.html";
+  });
+  $("#learning-btn").click(function() {
+    window.location.href = "./testList.html";
+  });
   //setting global variables for latitude and longitude to pass through yelp Ajax Request
   var latitude;
   var longitude;
@@ -32,7 +42,7 @@ $(document).ready(function() {
           infoWindow.open(map);
           map.setCenter(pos);
 
-          insertEVV(longitude, latitude, 1);
+          insertEVV(longitude, latitude);
         },
         function() {
           handleLocationError(true, infoWindow, map.getCenter());
@@ -54,14 +64,33 @@ $(document).ready(function() {
     );
     infoWindow.open(map);
   }
-  function insertEVV(longitude, latitude, EmployeeID) {
-    var EVVRecord = {
-      longitude: longitude,
-      latitude: latitude,
-      //hardcoding "EmployeeID" for now but once we have the login set up we need to go back and rework this:
-      EmployeeID: EmployeeID
-    };
+  function insertEVV(longitude, latitude) {
+    $.ajax({
+      url: "/api/user_data",
+      type: "GET"
+    }).then(function(userData) {
+      $.ajax({
+        url: "/api/shiftRecord/" + userData.id,
+        type: "GET"
+      }).then(function(currentShift) {
+        var EVVRecord = {
+          checkInLongitude: longitude,
+          checkInLatitude: latitude,
+          checkInTime: moment().format("h:mm:ss"),
+          UserID: userData.id,
+          id: currentShift.id
+        };
 
-    $.post("/api/EVVRecord", EVVRecord);
+        $.ajax({
+          method: "PUT",
+          url: "/api/EVVRecord",
+          data: EVVRecord
+        }).then(
+          console.log("successfully updated shift id: " + currentShift.id)
+        );
+      });
+    });
   }
 });
+
+//Building functionality for home page on-click events
