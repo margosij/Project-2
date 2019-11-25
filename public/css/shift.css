@@ -74,3 +74,40 @@ ul {
     padding-bottom: 3%;
     margin-top: 3%;
 }
+
+/* **********  Accordion  *************  */
+
+#titleBathing, 
+#titleToileting,
+#titleMobility,
+#titleEating,
+#titleDressing,
+#titleIADL
+  {
+  color: #C0C0C0;
+  background: #002357;
+  border: none;
+}
+
+#ui-id-1, 
+#ui-id-2, 
+#ui-id-3, 
+#ui-id-4, 
+#ui-id-5,
+#ui-id-6 {
+  background: #C0C0C0;
+}
+
+#list-group {
+  border: none;
+  color: #C0C0C0; 
+}
+
+ul#tasksBathing.list-group {
+  color: #C0C0C0;
+}
+
+.col-12 {
+  padding: 0;
+}
+
