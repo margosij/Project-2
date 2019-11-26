@@ -529,13 +529,13 @@ div.cal-day-hour {
 }
 .cal-year-box .row-fluid:hover,
 .cal-row-fluid:hover {
-  background-color: #fafafa;
+  background-color: #9de00c;
 }
 .cal-month-day {
   height: 100px;
 }
 [class*="cal-cell"]:hover {
-  background-color: #ededed;
+  background-color: #021db6;
 }
 .cal-year-box [class*="span"],
 .cal-month-box [class*="cal-cell"] {
