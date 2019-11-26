@@ -88,7 +88,9 @@ ul {
 
 /* ******** BUTTONS ************  */
 
-.button {
+#beginTest,
+#submitTest,
+#nextQuestion {
   color: #002357;
   /* background: rgb(236, 231, 226); */
   /* background: white; */
@@ -112,13 +114,17 @@ ul {
   /* -webkit-box-shadow:rgba(0, 0, 128, 0.7) 0px 5px 15px, inset rgba(0, 0, 128, 0.15) 0px -10px 20px; */
 }
 
-.button:hover {
+#beginTest:hover,
+#submitTest:hover,
+#nextQuestion:hover {
   box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
   -webkit-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
   /* background-color: rgb(207, 206, 205); */
 }
 
-.button:active {
+#beginTest:active,
+#submitTest:active,
+#nextQuestion:active {
   /* background-color: rgb(158, 151, 151); */
   outline: none;
   /* box-shadow: 0 5px #198ec4; */
@@ -128,7 +134,9 @@ ul {
   text-shadow:1px 1px 1px #eee;
 }
 
-.button:focus {
+#beginTest:focus,
+#submitTest:focus,
+#nextQuestion:focus {
   outline: 0;
 }
 
@@ -148,7 +156,8 @@ ul {
   border-radius: .70rem; 
   border-top: 20px solid #000080;
   /* border: 5px solid #9de00c; */
-  padding-top: 45%;
-  padding-bottom: 45%;
-  padding-left: 10%;
+  /* padding-top: 45%; */
+  /* padding-bottom: 45%; */
+  /* padding-left: 10%; */
+  height: 500px;
 }
