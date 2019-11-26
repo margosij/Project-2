@@ -11,6 +11,7 @@ var passport = require("../config/passport.js");
 var moment = require("moment");
 var Sequelize = require("sequelize");
 var Op = Sequelize.Op;
+
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -147,4 +148,6 @@ module.exports = function(app) {
       });
     }
   });
+
+
 };
