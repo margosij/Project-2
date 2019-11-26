@@ -159,9 +159,10 @@ ul {
 }
 
 #nextQuestion {
-  position: absolute;
-  bottom: 20px;
-  left: 6px;
+  /* position: absolute; */
+  /* bottom: 20px; */
+  /* left: 6px; */
+  margin-top: 3%;
   font-size: 1.5em;
   font-weight: 800;
 }
@@ -171,9 +172,10 @@ ul {
 }
 
 #submitTest {
-  position: absolute;
-  bottom: 20px;
-  left: 6px;
+  /* position: absolute; */
+  /* bottom: 20px; */
+  /* left: 6px; */
+  margin-top: 3%;
   font-size: 1.5em;
   font-weight: 800;
 }
@@ -193,16 +195,17 @@ ul {
   /* margin-left: 1.5%; */
   margin-top: 5%;
   padding-top: 5%;
-  
+  padding-bottom: 5%;
   border-top: 40px solid #000080;
   /* border: 5px solid #9de00c; */
   /* padding-top: 45%; */
   /* padding-bottom: 45%; */
   /* padding-left: 10%; */
-  height: 500px;
+  /* height: 500px; */
 }
 
 .test-storage {
+ 
   /* position: relative; */
   background: white;
   /* width: 100%; */
@@ -211,8 +214,15 @@ ul {
   border-top: 8px solid #002357;
   border-bottom: 8px solid #002357;
   padding: 2%;
+  margin: auto;
   overflow: scroll;
+  /* overflow-x: hidden; */
+  /* overflow-y: hidden;  */
   /* border: 2px solid #002357; */
+}
+
+.test-storage -webkit-scrollbar {
+  display: none;
 }
 
 #test {
@@ -226,6 +236,7 @@ ul {
 
 #displayTest {
   margin-top: 5%;
+  margin-bottom: 5%;
   font-size: 1.5em;
 }
 
