@@ -44,7 +44,8 @@ function results() {
   $("#incorrect").text("Wrong answers: " + wrong);
 
   if (currentQuestion === 10) {
-    alert(
+    $("#modalMatch").modal("toggle");
+    $("#testScore").text(
       "End of test! You scored a " +
         (parseFloat(correct) / dailyLiving.length) * 100 +
         "%"

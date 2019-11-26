@@ -45,7 +45,8 @@ function results() {
   $("#incorrect").text("Wrong answers: " + wrong);
 
   if (currentQuestion === 10) {
-    alert(
+    $("#modalMatch").modal("toggle");
+    $("#testScore").text(
       "End of test! You scored a " + (parseFloat(correct) / 10) * 100 + "%"
     );
   }
@@ -58,7 +59,7 @@ function nextButton() {
   if (currentQuestion > 0) {
     results();
   }
-  $.get("/api/testquestions", function(testResults) {
+  $.get("/api/testquestions/1", function(testResults) {
     testSetup = testResults;
     for (var i = 0; i < testSetup.length; i++) {
       $("#displayTest").html(
