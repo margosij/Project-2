@@ -23,7 +23,8 @@
     "nodemon": "^2.0.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^5.8.6"
+    "sequelize": "^5.8.6",
+    "signature_pad": "^3.0.0-beta.3"
   },
   "devDependencies": {
     "chai": "^4.2.0",
