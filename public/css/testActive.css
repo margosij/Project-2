@@ -90,7 +90,8 @@ ul {
 
 #beginTest,
 #submitTest,
-#nextQuestion {
+#nextQuestion,
+#postTest {
   color: #002357;
   /* background: rgb(236, 231, 226); */
   /* background: white; */
@@ -123,7 +124,8 @@ ul {
 
 #beginTest:hover,
 #submitTest:hover,
-#nextQuestion:hover {
+#nextQuestion:hover,
+#postTest:hover {
   color: #9de00c;
   box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
   margin-bottom: 5px;
@@ -133,7 +135,8 @@ ul {
 
 #beginTest:active,
 #submitTest:active,
-#nextQuestion:active {
+#nextQuestion:active,
+#postTest.active {
   /* background-color: rgb(158, 151, 151); */
   outline: none;
   /* box-shadow: 0 5px #198ec4; */
@@ -145,7 +148,8 @@ ul {
 
 #beginTest:focus,
 #submitTest:focus,
-#nextQuestion:focus {
+#nextQuestion:focus,
+#postTest:focus {
   outline: 0;
 }
 

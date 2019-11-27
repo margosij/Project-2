@@ -24,32 +24,26 @@ module.exports = function(app) {
     });
   });
 
-  // Get route for returning posts of a specific category
-  app.get("/api/posts/category/:category", function(req, res) {
-    db.Post.findAll({
-      where: {
-        TestListId: req.params.testId
-      },
-      include: [db.TestList]
-    }).then(function(dbTestQuestions) {
-      res.json(dbTestQuestions);
-    });
+  app.post("/api/testRecordSave", function(req, res) {
+    console.log(JSON.stringify(req.body));
+    db.TestRecord.create({
+      testScore: req.body.testScore,
+      testPass: req.body.testPass,
+      testDate: moment(),
+      TestListId: req.body.TestListId,
+      UserId: req.body.UserId
+    })
+      .then(function() {
+        res.end();
+      })
+      .catch(function(err) {
+        res.status(401).json(err);
+      });
   });
 
   app.get("/api/testList/", function(req, res) {
     db.TestList.findAll({}).then(function(dbTestList) {
       res.json(dbTestList);
-    });
-  });
-
-  // DELETE route for deleting posts
-  app.delete("/api/posts/:id", function(req, res) {
-    db.Post.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbPost) {
-      res.json(dbPost);
     });
   });
 
@@ -100,22 +94,6 @@ module.exports = function(app) {
     }).then(function(dbShifts) {
       res.json(dbShifts);
     });
-  });
-
-  app.post("/api/testRecord", function(req, res) {
-    db.TestRecord.create({
-      testScore: req.body.testScore,
-      testPass: req.body.testPass,
-      testDate: moment(),
-      TestListId: req.body.TestListId,
-      UserId: req.body.UserId
-    })
-      .then(function() {
-        res.redirect(307, "/testList");
-      })
-      .catch(function(err) {
-        res.status(401).json(err);
-      });
   });
 
   app.post("/api/login", passport.authenticate("local"), function(req, res) {

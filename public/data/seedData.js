@@ -14,7 +14,7 @@ module.exports = {
         testName: "Activities of Daily Living",
         testCategory: "Health",
         testRequired: 1,
-        testCreatedBy: "Patrick"
+        testCreatedBy: "Joel"
       },
       {
         testName: "Hand Hygiene",
@@ -98,6 +98,80 @@ module.exports = {
           "HIPAA was passed by Congress and is a Federal Law to ensure all of us the confidentiality of our personal medical information.",
         questionAnswer: "True",
         questionOptions: "True,False"
+      },
+      {
+        TestListId: 2,
+        questionText:
+          "Which of the following is not considered an activity of daily living (ADL)?",
+        questionOptions: "Bathing,Toileting,Transferring,Cooking",
+        questionAnswer: "Cooking"
+      },
+      {
+        TestListId: 2,
+        questionText:
+          "All patients can improve in doing ADLs if they really want to.",
+        questionOptions: "True,False",
+        questionAnswer: "False"
+      },
+      {
+        TestListId: 2,
+        questionText: "Which of the following is true about ADLs",
+        questionOptions:
+          "If you are unable to do any of them you are considered homebound.,They include such household chores as washing dishes and doing laundry.,They are the basic activities of caring for oneself that are essential for day to day living.,All of the above.",
+        questionAnswer:
+          "They are the basic activities of caring for oneself that are essential for day to day living."
+      },
+      {
+        TestListId: 2,
+        questionText:
+          "Which of the following would be important for the home health aide to do in order to help the patient improve in doing ADLs?",
+        questionOptions:
+          "Learn how to use the assistive devices the patient may need,Encourage the patient to do as much for himself/herself as possible.,Provide enough time for the patient to do things.,All of the above are important.",
+        questionAnswer: "All of the above are important."
+      },
+      {
+        TestListId: 2,
+        questionText: "Which ADL limitation is reported most often?",
+        questionOptions:
+          "Requiring assistance with eating.,Requiring assistance with bathing.,Requiring assistance with toileting.,Requiring assistance with dressing.",
+        questionAnswer: "Requiring assistance with bathing."
+      },
+      {
+        TestListId: 2,
+        questionText:
+          "Which of the following is not a common reason that people need help with ADLs?",
+        questionOptions:
+          "Having a baby.,Having paralysis.,Having fractures.,Having chronic lung disease.",
+        questionAnswer: "Having a baby."
+      },
+      {
+        TestListId: 2,
+        questionText:
+          "A key to success in improving ADL function is good communication between home health aide and professionals who are seeing the patient.",
+        questionOptions: "True,False",
+        questionAnswer: "True"
+      },
+      {
+        TestListId: 2,
+        questionText: "How many activities are commonly called the ADLs?",
+        questionOptions: "Four,Six,Three,Seven",
+        questionAnswer: "Six"
+      },
+      {
+        TestListId: 2,
+        questionText:
+          "Which of the following is considered to be one of the ADLs?",
+        questionOptions:
+          "Transferring,Using the telephone,Doing laundry,Washing dishes",
+        questionAnswer: "Transferring"
+      },
+      {
+        TestListId: 2,
+        questionText:
+          "Which of the following diseases/conditions may cause a patient to need assistance with ADLs?",
+        questionOptions:
+          "Stroke,Severe arthritis,Major surgery,All of the above",
+        questionAnswer: "All of the above"
       }
     ];
 
