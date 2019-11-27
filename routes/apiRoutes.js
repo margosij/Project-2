@@ -16,8 +16,12 @@ var Op = Sequelize.Op;
 // =============================================================
 module.exports = function(app) {
   //Get route for retrieving the test question info
-  app.get("/api/testquestions", function(req, res) {
-    db.TestQuestion.findAll({}).then(function(dbTestQuestions) {
+  app.get("/api/testquestions/:testId", function(req, res) {
+    db.TestQuestion.findAll({
+      where: {
+        TestListId: req.params.testId
+      }
+    }).then(function(dbTestQuestions) {
       res.json(dbTestQuestions);
     });
   });
