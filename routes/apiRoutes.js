@@ -9,8 +9,6 @@
 var db = require("../models");
 var passport = require("../config/passport.js");
 var moment = require("moment");
-var Sequelize = require("sequelize");
-var Op = Sequelize.Op;
 
 // Routes
 // =============================================================
@@ -60,10 +58,7 @@ module.exports = function(app) {
     db.EVVRecord.findOne({
       where: {
         ClientId: req.params.id,
-        shiftDate: {
-          [Op.gte]: moment().subtract(12, "hours"),
-          [Op.lte]: moment().add(12, "hours")
-        }
+        shiftDate: moment().startOf("day")
       }
     }).then(function(dbShift) {
       res.json(dbShift);
@@ -165,6 +160,4 @@ module.exports = function(app) {
       });
     }
   });
-
-
 };
