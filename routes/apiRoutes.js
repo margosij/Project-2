@@ -9,8 +9,6 @@
 var db = require("../models");
 var passport = require("../config/passport.js");
 var moment = require("moment");
-var Sequelize = require("sequelize");
-var Op = Sequelize.Op;
 
 // Routes
 // =============================================================
@@ -26,21 +24,17 @@ module.exports = function(app) {
   app.get("/api/posts/category/:category", function(req, res) {
     db.Post.findAll({
       where: {
-        category: req.params.category
-      }
-    }).then(function(dbPost) {
-      res.json(dbPost);
+        TestListId: req.params.testId
+      },
+      include: [db.TestList]
+    }).then(function(dbTestQuestions) {
+      res.json(dbTestQuestions);
     });
   });
 
-  // POST route for saving a new post
-  app.post("/api/posts", function(req, res) {
-    db.Post.create({
-      title: req.body.title,
-      body: req.body.body,
-      category: req.body.category
-    }).then(function(dbPost) {
-      res.json(dbPost);
+  app.get("/api/testList/", function(req, res) {
+    db.TestList.findAll({}).then(function(dbTestList) {
+      res.json(dbTestList);
     });
   });
 
@@ -55,29 +49,27 @@ module.exports = function(app) {
     });
   });
 
-  // PUT route for updating posts
-  app.put("/api/posts", function(req, res) {
-    db.Post.update(req.body, {
-      where: {
-        id: req.body.id
-      }
-    }).then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
-
   // Get route for retrieving a single post
   app.get("/api/shiftRecord/:id", function(req, res) {
     db.EVVRecord.findOne({
       where: {
         ClientId: req.params.id,
-        shiftDate: {
-          [Op.gte]: moment().subtract(12, "hours"),
-          [Op.lte]: moment().add(12, "hours")
-        }
+        shiftDate: moment().startOf("day")
       }
     }).then(function(dbShift) {
       res.json(dbShift);
+    });
+  });
+
+  // Get route for retrieving a single post
+  app.get("/api/testRecord/:userId/:testId", function(req, res) {
+    db.TestRecord.findOne({
+      where: {
+        TestListId: req.params.testId,
+        UserId: req.params.userId
+      }
+    }).then(function(dbTestRecords) {
+      res.json(dbTestRecords);
     });
   });
 
@@ -104,6 +96,22 @@ module.exports = function(app) {
     }).then(function(dbShifts) {
       res.json(dbShifts);
     });
+  });
+
+  app.post("/api/testRecord", function(req, res) {
+    db.TestRecord.create({
+      testScore: req.body.testScore,
+      testPass: req.body.testPass,
+      testDate: moment(),
+      TestListId: req.body.TestListId,
+      UserId: req.body.UserId
+    })
+      .then(function() {
+        res.redirect(307, "/testList");
+      })
+      .catch(function(err) {
+        res.status(401).json(err);
+      });
   });
 
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
@@ -148,6 +156,4 @@ module.exports = function(app) {
       });
     }
   });
-
-
 };

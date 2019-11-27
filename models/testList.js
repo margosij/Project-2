@@ -30,6 +30,9 @@ module.exports = function(sequelize, DataTypes) {
     TestList.hasMany(models.TestQuestion, {
       onDelete: "cascade"
     });
+    TestList.hasMany(models.TestRecord, {
+      onDelete: "cascade"
+    });
   };
 
   return TestList;
