@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  $($(".button")).click(function() {
+    window.location.href =
+      "./testActive?id=" + $(this).attr("data-test") + ".html";
+  });
+
   $.ajax({
     url: "/api/user_data",
     type: "GET"

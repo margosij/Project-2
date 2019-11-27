@@ -31,22 +31,20 @@
 </head>
 <body>
 
-    <!-- MODAL  -->
+    <!-- Modal -->
 
-    <div class="modal fade bd-example-modal-lg" id="modalMatch" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
-        <div class="modal-dialog">
+    <div class="modal fade bd-example-modal-lg" id="modalMatch" tabindex="-1" role="dialog" aria-labelledby="modal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal-title">
-                        Please make sure to answer all the questions!
-                    </h5>
+                    <h5 class="modal-title" id="modal-title"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h3 id="modalName"></h3>
-                    <!-- <img src="match-img" class="match-img" id="modal-img" alt="profilepic" /> -->
+                    <h2 id="testScore"></h2>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" id="modalClose" data-dismiss="modal">
@@ -114,12 +112,13 @@
             <div class="col">
                 <button id="nextQuestion">Next</button>
                 <button id="submitTest">Submit</button>
+                <button id="postTest">Post Results</button>
             </div>
         </div>  
     </div>
 
     <!-- TEST SCRIPT  -->
-    <script src="/test/testquestions.js"></script>
+    <script src="js/testquestions.js"></script>
 
 </body>
 </html>
