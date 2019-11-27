@@ -101,13 +101,15 @@ $(document).ready(function() {
       testSetup = testResults;
       for (var i = 0; i < testSetup.length; i++) {
         $("#displayTest").html(
-          "<h2>" + testSetup[currentQuestion - 1].questionText + "</h2>"
+          '<h2 class="questionTest">' +
+            testSetup[currentQuestion - 1].questionText +
+            "</h2>"
         );
         var split = testSetup[currentQuestion - 1].questionOptions.split(",");
         for (var j = 0; j < split.length; j++) {
           $("#displayTest").append(
             // eslint-disable-next-line quotes
-            '<hr><label class="radio-inline pr-4"><input type="radio" name="answers-' +
+            '<hr><label class="radio-inline pr-4"><input type="radio" class="radioTest" name="answers-' +
               currentQuestion +
               // eslint-disable-next-line quotes
               '"value="' +
