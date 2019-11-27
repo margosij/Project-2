@@ -11,12 +11,24 @@ var passport = require("../config/passport.js");
 var moment = require("moment");
 var Sequelize = require("sequelize");
 var Op = Sequelize.Op;
+
 // Routes
 // =============================================================
 module.exports = function(app) {
   //Get route for retrieving the test question info
   app.get("/api/testquestions/:testId", function(req, res) {
     db.TestQuestion.findAll({
+      where: {
+        TestListId: req.params.testId
+      }
+    }).then(function(dbTestQuestions) {
+      res.json(dbTestQuestions);
+    });
+  });
+
+  // Get route for returning posts of a specific category
+  app.get("/api/posts/category/:category", function(req, res) {
+    db.Post.findAll({
       where: {
         TestListId: req.params.testId
       },
@@ -153,4 +165,6 @@ module.exports = function(app) {
       });
     }
   });
+
+
 };

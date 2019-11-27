@@ -1,17 +1,15 @@
 darker green
-#00812b
+#00812b (button and storage backgrounds)
 
 light green
-#9de00c
-
-light gray
-#e0dfdf
+#9de00c (button and storage backgrounds)
 
 silver
-#C0C0C0
+#C0C0C0 (text and button hover)
 
 royal blue 
-#021db6
+#021db6 (?)
+#0000c2 (top of background gradient)
 
-navy blue
-#000080
+dark blue (borders and labels)
+#002357
