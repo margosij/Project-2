@@ -28,6 +28,14 @@ function startFunction() {
 
 function results() {
   selectedAnswers = $(displayTest.find("input:checked"));
+  // for (var i = 0; i < selectedAnswers.length; i++) {
+  //   if (selectedAnswers.length < 10 || selectedAnswers.length === 0) {
+  //     $("#modalMatch").modal("toggle");
+  //   } else {
+  //     displayTest.hide();
+  //     submitTest.hide();
+  //   }
+  // }
 
   if (
     selectedAnswers[0].value === dailyLiving[currentQuestion - 1].correctAnswer
@@ -40,12 +48,11 @@ function results() {
   }
 
   $("#correct").text("Answers right: " + correct);
-
+  // .show();
   $("#incorrect").text("Wrong answers: " + wrong);
-
+  // .show();
   if (currentQuestion === 10) {
-    $("#modalMatch").modal("toggle");
-    $("#testScore").text(
+    alert(
       "End of test! You scored a " +
         (parseFloat(correct) / dailyLiving.length) * 100 +
         "%"
