@@ -33,6 +33,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="https://momentjs.com/downloads/moment.js"></script>
 
+
   <title>Passport Authentication</title>
 
 
@@ -49,7 +50,7 @@
 
 <body>
 
-  <!-- Modal -->
+  <!-- Modal Employee Signature -->
 
   <div class="modal fade bd-example-modal-lg" id="modalMatch" tabindex="-1" role="dialog" aria-labelledby="modal"
     aria-hidden="true">
@@ -73,6 +74,43 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" id="modalClose" data-dismiss="modal">
             Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Incomplete/Refused Task -->
+
+  <div class="modal fade bd-example-modal-lg" id="modalIncomplete" tabindex="-1" role="dialog" aria-labelledby="modal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-title">Reason for Incomplete Task</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <span id="lblTaskCategory"></span> -
+          <span id="lblTaskKey"></span>
+          <div class="form-group">
+            <h5 id="modalError" style="color:red">**Must include both reason and category</h5>
+            <select id="dropdownReasonIncomplete" class="form-control" id="exampleFormControlSelect1">
+              <option>Select...</option>
+              <option>Refused</option>
+              <option>Unable</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input id="tbReasonIncomplete" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="modalIncompleteSave">
+            Save
           </button>
         </div>
       </div>
