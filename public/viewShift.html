@@ -7,6 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
   <!-- BOOTSTRAP CDN -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -23,18 +29,13 @@
   <!-- HOME.CSS  -->
   <link rel="stylesheet" href="css/shift.css" media="screen">
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery.js"></script>
-
   <!-- BOOTSTRAP SCRIPTS  -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="https://momentjs.com/downloads/moment.js"></script>
 
   <title>Passport Authentication</title>
 
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
   <link rel="stylesheet" href="css/signature_pad.css">
   <script>
     $(function () {
@@ -47,6 +48,36 @@
 </head>
 
 <body>
+
+  <!-- Modal -->
+
+  <div class="modal fade bd-example-modal-lg" id="modalMatch" tabindex="-1" role="dialog" aria-labelledby="modal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-title">Employee Signature:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="wrapper">
+            <canvas id="signature-pad" class="signature-pad"></canvas>
+          </div>
+          <div>
+            <button id="save">Save</button>
+            <button id="clear">Clear</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="modalClose" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <!--Navbar-->
   <nav class="navbar navbar-light navbar-5 white">
 
@@ -54,6 +85,8 @@
     <a class="navbar-brand" href="#">
       <p>LOGO</p>
     </a>
+
+
 
     <!-- Collapse button -->
     <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
@@ -90,13 +123,11 @@
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
           <!-- <h2>Shift Info</h2> -->
-          <hr>
-          <hr>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-12">
-          <div id="accordion">
+          <div id="accordion" class="jquery-accordion ui-accordion">
             <h3 id="titleBathing">Bathing</h3>
             <div>
               <ul id="tasksBathing" class="list-group">
@@ -137,17 +168,29 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-12 mt-4 mb-4">
-          <div class="wrapper">
-            <canvas id="signature-pad" class="signature-pad"></canvas>
-          </div>
+        <div class="col-12 text-center">
+          <button id="btnEmployeeSign">Employee Sign</button>
+        </div>
+      </div>
+      <div id="rowFinalize" class="row justify-content-center">
+        <div class="col-12 text-center">
+          <h3 id="lblShiftDate">Shift Date: </h3>
+          <h3 id="lblShiftCheckIn">Check In: </h3>
+          <h3 id="lblShiftCheckOut">Check Out: </h3>
           <div>
-            <button id="save">Save</button>
-            <button id="clear">Clear</button>
+            <div class="wrapper">
+              <canvas id="signature-pad2" class="signature-pad"></canvas>
+            </div>
+            <div>
+              <button id="save2">Save</button>
+              <button id="clear2">Clear</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <input type="hidden" id="shiftId">
     <script src="js/viewShift.js" type="text/javascript"></script>
     <script src="js/signature_padSetup.js" type="text/javascript"></script>
     <script src="js/signature_pad.js" type="text/javascript"></script>
