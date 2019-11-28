@@ -59,6 +59,40 @@ module.exports = function(app) {
     });
   });
 
+  // PUT route for saving a new post
+  app.put("/api/shiftRecord", function(req, res) {
+    db.EVVRecord.update(
+      {
+        shiftRecord: req.body.shiftRecord
+      },
+      { where: { id: req.body.id } }
+    ).then(function(dbshiftRecord) {
+      res.json(dbshiftRecord);
+    });
+  });
+
+  app.put("/api/shiftEmployeeSignature", function(req, res) {
+    db.EVVRecord.update(
+      {
+        employeeSignature: req.body.employeeSignature
+      },
+      { where: { id: req.body.id } }
+    ).then(function(dbshiftRecord) {
+      res.json(dbshiftRecord);
+    });
+  });
+
+  app.put("/api/shiftClientSignature", function(req, res) {
+    db.EVVRecord.update(
+      {
+        clientSignature: req.body.clientSignature
+      },
+      { where: { id: req.body.id } }
+    ).then(function(dbshiftRecord) {
+      res.json(dbshiftRecord);
+    });
+  });
+
   // Get route for retrieving a single post
   app.get("/api/testRecord/:userId/:testId", function(req, res) {
     db.TestRecord.findOne({
