@@ -116,6 +116,10 @@ ul a:hover {
   background: #C0C0C0;
 }
 
+b {
+  color: white;
+}
+
 /* *************** Calendar Style **********  */
 [class*="cal-cell"] {
   float: left;

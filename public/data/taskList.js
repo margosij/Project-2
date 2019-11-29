@@ -53,7 +53,7 @@ var taskList = {
     "On-site laundry tasks",
     "Clear pathways/mimimize clutter",
     "Retrieve/return equipment",
-    "Clean BSC/urinal/bedpan/toileting area",
+    "Clean toileting area",
     "Empty trash, dispose of incontinence supplies",
     "On-site laundry tasks",
     "Equipment setup for eating",
