@@ -42,6 +42,14 @@ module.exports = function(sequelize, DataTypes) {
     shiftRecord: {
       type: DataTypes.TEXT,
       allowNull: true
+    },
+    employeeSignature: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    clientSignature: {
+      type: DataTypes.TEXT,
+      allowNull: true
     }
   });
 
