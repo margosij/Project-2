@@ -14,24 +14,15 @@ body {
     /* background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #002357), color-stop(80%, #0000c2)); */
     background-attachment: fixed;
 }
-#header {
-    /* border: 1px solid red; */
-    /* margin-bottom: 5%; */
-}
+
 #logo {
     color: #C0C0C0;
-    /* border: 1px solid black; */
-    /* border-bottom: 3px solid #021db6; */
-    /* width: 75%; */
     font-size: 3em;
     margin-top: 8%;
-    /* padding-bottom: 2%; */
 } 
 .form-storage {
-    /* background: #00812b; */
     background: -webkit-gradient(linear, right bottom, left top, color-stop(5%, #00812b), color-stop(85%, #9de00c));
     box-shadow: 0px 0px 200px 30px #C0C0C0;
-    /* border: 2px solid #021db6; */
     width: 95%;
     margin-left: 2.5%;
     margin-top: 12%;
@@ -39,31 +30,32 @@ body {
     border-radius: .70rem; 
     border-top: 20px solid #000080;
 
-    /* Different gradient  */
+    /* ****************  Different gradient  ********************  */
+
     /* background-image: radial-gradient(#9de00c 5%, #00812b 90%); */
-/* *********GOLD MODE*********  */
+
+/* ********************  GOLD MODE  ************************  */
+
     /* background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #c0b12c), color-stop(100%, #FEE935)); */
 }
 .btn-default {
     color: #002357;
-    /* color: white; */
     background: #C0C0C0;
-    /* color: #000080; */
-    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b)); */
-    /* border: 3px solid #000080; */
-    /* border: 3px solid #002357;   */
     box-shadow: 5px 5px 10px #002357;
 }
+
 .btn-default:hover {
     color: #000080;
     box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
     -webkit-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
 }
+
 .btn-default:active {
     border-radius: .25rem;
     box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
     text-shadow:1px 1px 1px #eee;
 }
+
 label {
     margin-bottom: 2%;
     /* color: #C0C0C0; */
@@ -72,34 +64,22 @@ label {
     /* color: white; */
     /* color: #e0dfdf; */
 }
+
 .form-control {
     background: #C0C0C0;
     color: #002357;
     /* border: 3px solid #021db6; */
     border: 3px solid #002357;
 }
+
 :-webkit-input-placeholder {
     color: #002357;
 }
+
 input[type="email"].form-control::-webkit-input-placeholder {
     color: #002357;
 }
+
 input[type="password"].form-control::-webkit-input-placeholder {
     color: #002357;
 }
-/* #login-container {
-    border: 1px solid green;
-    padding: 3%;
-    background: gray;
-}
-#login-form-storage {
-    border: 5px solid rgb(21, 48, 130);
-    padding: 5%;
-    background: rgb(223, 148, 9);
-}
-input {
-    margin-bottom: 1%;
-}
-.btn-primary {
-    background-color: rgb(223, 148, 9)
-} */
