@@ -108,6 +108,8 @@ ul a:hover {
 #cal-day-box {
   font-weight: 800;
   background: #000080;
+  color: #000080;
+
 }
 
 #calendar {
@@ -393,7 +395,7 @@ ul a:hover {
   margin-left: -60px;
 }
 #cal-day-box .day-event {
-  position: relative;
+  position: absolute;
   max-width: 200px;
   overflow: hidden;
 }
