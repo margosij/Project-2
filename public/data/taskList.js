@@ -24,13 +24,13 @@ var taskList = {
     "Transer to/from bed",
     "Transfer to/from chair",
     "Ambulation room to room",
-    "Assist with stairs inside the home",
+    "Assist with stairs",
     "ROM",
     "Tune/reposition"
   ],
   Toileting: [
     "Remove/pull up/fasten garments",
-    "Hygiene after toileting/incontinence",
+    "Hygiene after toileting",
     "Transfer to/from BSC or toilet"
   ],
   Eating: [
@@ -40,7 +40,7 @@ var taskList = {
     "Lift limb to mouth",
     "Tube feeding",
     "Clean meal service area",
-    "Clean utensiles/dishes, empty trash",
+    "Clean dishes, empty trash",
     "Meal Preparation: Open packages",
     "Meal Preparation: Heat/assemble food"
   ],
@@ -54,10 +54,10 @@ var taskList = {
     "Clear pathways/mimimize clutter",
     "Retrieve/return equipment",
     "Clean toileting area",
-    "Empty trash, dispose of incontinence supplies",
+    "Dispose of incontinence supplies",
     "On-site laundry tasks",
     "Equipment setup for eating",
-    "Chop/grind/puree/thicken food"
+    "Prepare/thicken food"
   ]
 };
 module.exports = taskList;
