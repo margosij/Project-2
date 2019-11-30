@@ -26,10 +26,6 @@ body {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(0, 35, 87)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-/* .custom-toggler.navbar-toggler {
-  border-color: rgb(255,102,203);
-}  */
-
 .custom-toggler .navbar-toggler-icon:hover {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(192, 192, 192)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
@@ -55,7 +51,6 @@ nav .navbar-nav li a {
 }
 
 .navbar-brand { 
-  /* color: #C0C0C0; */
   font-size: 2em;
   margin-left: 10%;
   margin-top: 1.5%;
@@ -65,7 +60,6 @@ nav .navbar-nav li a {
   font-family: 'Oswald', sans-serif;
   font-weight: 600;
   color: #c0c0c0;
-  /* color: #021db6; */
 }
 
 ul {
@@ -75,7 +69,91 @@ ul {
     margin-top: 3%;
 }
 
-/* **********  Accordion  *************  */
+ul a:hover {
+  background: rgba(2, 29, 182, 0.8);
+}
+
+/* **********  Buttons  *************** */
+
+#btnEmployeeSign,
+#save,
+#clear,
+#save2,
+#clear2 {
+  color: #002357;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b));
+
+  /* ****** Alternate gradient  ****** */
+
+  /* background-image: radial-gradient(#9de00c 25%, #00812b 90%); */
+  
+  margin-top: 5%;
+  margin: bottom 5%;
+  font-size: 1.5em;
+  font-weight: 800;
+  width: 95%; 
+  padding: 2%;
+  border-top: 20px solid #000080;
+  display:inline-block; 
+  outline: none;
+  box-shadow: 0px 0px 15px 2px #C0C0C0;
+  transform: translateY(4px);
+  border-radius: .40rem; 
+}
+
+#btnEmployeeSign:hover {
+  box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+  -webkit-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+
+#btnEmployeeSign:active {
+  outline: none;
+  border-radius: .25rem;
+  box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  text-shadow:1px 1px 1px #eee;
+}
+
+#btnEmployeeSign:focus {
+  outline: 0;
+}
+
+#save,
+#clear,
+#save2, 
+#clear2 {
+  color: #002357;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b));
+  width: 40%;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+#save:hover,
+#clear:hover,
+#save2:hover, 
+#clear2:hover {
+  box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+  -webkit-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+
+#save:active,
+#clear:active,
+#save2:active, 
+#clear2:active {
+  outline: none;
+  border-radius: .25rem;
+  box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  text-shadow:1px 1px 1px #eee;
+}
+
+#save:focus,
+#clear:focus,
+#save2:focus, 
+#clear2:focus {
+  outline: 0;
+}
+
+/* **********  Custom Accordion  *************  */
 
 #titleBathing, 
 #titleToileting,
@@ -98,16 +176,43 @@ ul {
   background: #C0C0C0;
 }
 
-#list-group {
-  border: none;
-  color: #C0C0C0; 
-}
-
-ul#tasksBathing.list-group {
-  color: #C0C0C0;
+.list-group {
+  color: black;
 }
 
 .col-12 {
   padding: 0;
 }
 
+#accordion {
+  margin-top: 5%;
+}
+
+h3 {
+  color: #C0C0C0;
+}
+
+/* ************  Modals  ****************** */
+.modal-content {
+  background: rgb(224, 223, 223);
+  color: #0c5c9c;
+  font-size: 1.25em;
+}
+
+select {
+  margin-top: 5%;
+  color: #002357;
+}
+
+.btn-secondary {
+  color: #002357;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #9de00c), color-stop(100%, #00812b));
+  box-shadow: 5px 5px #002357;
+  border: none;
+}
+
+.btn-secondary:active {
+background-color: rgb(158, 151, 151);
+box-shadow: 0 5px #198ec4;
+transform: translateY(4px);
+}
