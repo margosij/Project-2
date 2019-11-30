@@ -231,15 +231,19 @@ $(document).ready(function() {
             newTaskItem
               .find("span")
               .css("text-decoration-line", "line-through");
-            newTaskItem.find("button").attr(category + "checked", "true");
-            newTaskItem.find("button").attr("complete", "true");
+            newTaskItem
+              .find("button.complete")
+              .attr(category + "checked", "true");
+            newTaskItem.find("button.complete").attr("complete", "true");
             newTaskItem.css("background-color", "green");
           } else if (shiftCategory[task] !== "") {
             newTaskItem
               .find("span")
               .css("text-decoration-line", "line-through");
-            newTaskItem.find("button").attr(category + "checked", "true");
-            newTaskItem.find("button").attr("complete", "true");
+            newTaskItem
+              .find("button.incomplete")
+              .attr(category + "checked", "true");
+            newTaskItem.find("button.incomplete").attr("complete", "true");
             newTaskItem.css("background-color", "red");
           }
 
@@ -248,9 +252,9 @@ $(document).ready(function() {
           taskSection.append(newTaskItem);
 
           var totalADL = $("#tasks" + category + " li").length;
-          var completeADL =
-            $("#tasks" + category + " li button[" + category + "checked]")
-              .length / 2;
+          var completeADL = $(
+            "#tasks" + category + " li button[" + category + "checked]"
+          ).length;
           $("#title" + category).text(
             category + " (" + completeADL + " of " + totalADL + ")"
           );
