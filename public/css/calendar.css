@@ -415,7 +415,7 @@ div.cal-day-hour {
   margin-left: -60px;
 }
 #cal-day-box .day-event {
-  position: relative;
+  position: absolute;
   max-width: 200px;
   overflow: hidden;
 }
