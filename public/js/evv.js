@@ -16,6 +16,7 @@ $(document).ready(function() {
 
   //On Click event to get map and current latitude and longitude
   $("#btnLocate").on("click", initMap);
+  checkInorOut();
 
   function initMap() {
     var map, infoWindow;
@@ -64,6 +65,7 @@ $(document).ready(function() {
     );
     infoWindow.open(map);
   }
+
   function insertEVV(longitude, latitude) {
     $.ajax({
       url: "/api/user_data",
@@ -73,13 +75,23 @@ $(document).ready(function() {
         url: "/api/shiftRecord/" + userData.id,
         type: "GET"
       }).then(function(currentShift) {
-        var EVVRecord = {
-          checkInLongitude: longitude,
-          checkInLatitude: latitude,
-          checkInTime: moment().format("h:mm:ss"),
-          UserID: userData.id,
-          id: currentShift.id
-        };
+        if (currentShift.clientSignature) {
+          var EVVRecord = {
+            checkOutLongitude: longitude,
+            checkOutLatitude: latitude,
+            checkOutTime: moment().format("h:mm:ss"),
+            UserID: userData.id,
+            id: currentShift.id
+          };
+        } else {
+          var EVVRecord = {
+            checkInLongitude: longitude,
+            checkInLatitude: latitude,
+            checkInTime: moment().format("h:mm:ss"),
+            UserID: userData.id,
+            id: currentShift.id
+          };
+        }
 
         $.ajax({
           method: "PUT",
@@ -88,6 +100,23 @@ $(document).ready(function() {
         }).then(
           console.log("successfully updated shift id: " + currentShift.id)
         );
+      });
+    });
+  }
+
+  function checkInorOut() {
+    $.ajax({
+      url: "/api/user_data",
+      type: "GET"
+    }).then(function(userData) {
+      $.ajax({
+        url: "/api/shiftRecord/" + userData.id,
+        type: "GET"
+      }).then(function(currentShift) {
+        if (currentShift.clientSignature) {
+          $("#lblCheckIn").text("Check Out");
+          $("#exampleModalLongTitle").text("Employee Check-Out Success");
+        }
       });
     });
   }
