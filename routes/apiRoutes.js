@@ -108,11 +108,12 @@ module.exports = function(app) {
   // PUT route for saving a new post
   app.put("/api/EVVRecord", function(req, res) {
     db.EVVRecord.update(
-      {
-        checkInLongitude: req.body.checkInLongitude,
-        checkInLatitude: req.body.checkInLatitude,
-        checkInTime: req.body.checkInTime
-      },
+      req.body,
+      // {
+      //   checkInLongitude: req.body.checkInLongitude,
+      //   checkInLatitude: req.body.checkInLatitude,
+      //   checkInTime: req.body.checkInTime
+      // },
       { where: { id: req.body.id } }
     ).then(function(dbEVVRecord) {
       res.json(dbEVVRecord);
