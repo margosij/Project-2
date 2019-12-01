@@ -5,7 +5,7 @@ Here's the [Github] (https://github.com/margosij/Project-2/pull/38) link! Here's
 The contributers and their roles for this project were: 
     1. Jamie O'Neill - back end writer 
     2. Patrick O'Neill - back end writer 
-    3. Elizabeth Clohosey - front end designer 
+    3. Elizabeth Clohosey - front end designer and writer
     4. Joel Margosian - back end writer
 
 Instructions:
