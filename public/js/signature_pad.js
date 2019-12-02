@@ -15,8 +15,6 @@ var saveButton = document.getElementById("save");
 var cancelButton = document.getElementById("clear");
 var saveButton2 = document.getElementById("save2");
 var cancelButton2 = document.getElementById("clear2");
-//get shiftId from hidden field
-var shiftId = $("#shiftId").val();
 //add eventListeners to listen for save or cancel button clicks
 saveButton.addEventListener("click", saveSignature);
 cancelButton.addEventListener("click", clearSignature);
@@ -52,7 +50,7 @@ function saveSignature() {
   var data = signaturePad.toDataURL("image/png");
   //object shiftUpdate holds data for shiftId and employeeSignature binary data
   var shiftUpdate = {
-    id: shiftId,
+    id: $("#shiftId").val(),
     employeeSignature: data
   };
   //put ajax call to update Employee Signature in database
