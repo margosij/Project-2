@@ -32,4 +32,4 @@ The technologies used to create this app are:
     17. Dotenv
     18. gitignore
 
-    test
+    test for presentation
