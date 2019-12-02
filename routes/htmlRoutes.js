@@ -6,35 +6,18 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 // Dependencies
 // =============================================================
 var path = require("path");
-
 // Routes
 // =============================================================
 module.exports = function(app) {
   // Each of the below routes just handles the HTML page that the user gets sent to.
-
-  app.get("/home", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
-  });
-
-<<<<<<< Updated upstream
   // route loads testList.html
   app.get("/testList", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/testList.html"));
   });
-
   // route loads testActive.html
   app.get("/testActive", function(req, res) {
-=======
-  // blog route loads blog.html
-  app.get("/testList", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/testList.html"));
-  });
-
-  app.get("/testActive", isAuthenticated, function(req, res) {
->>>>>>> Stashed changes
     res.sendFile(path.join(__dirname, "../public/testActive.html"));
   });
-
   // route loads signup.html
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
@@ -43,7 +26,6 @@ module.exports = function(app) {
     }
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
-
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -51,25 +33,18 @@ module.exports = function(app) {
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
-
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/home", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
-
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/schedule", isAuthenticated, function(req, res) {
+  app.get("/schedule", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/viewSchedule.html"));
   });
-
-<<<<<<< Updated upstream
   // route loads viewShift.html
   app.get("/shift", function(req, res) {
-=======
-  app.get("/shift", isAuthenticated, function(req, res) {
->>>>>>> Stashed changes
     res.sendFile(path.join(__dirname, "../public/viewShift.html"));
   });
 };
