@@ -1,3 +1,4 @@
+//list of all random tasks associated with home care activities of daily living
 var taskList = {
   Bathing: [
     "Tub bath or shower",

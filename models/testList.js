@@ -25,8 +25,8 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   TestList.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
+    // Associating TestList with TestQuention and TestRecord
+    // When an TestList is deleted, also delete any associated Posts
     TestList.hasMany(models.TestQuestion, {
       onDelete: "cascade"
     });
