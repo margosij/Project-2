@@ -4,7 +4,6 @@ var passport = require("./config/passport");
 
 var db = require("./models");
 var PORT = process.env.PORT || 3000;
-
 var app = express();
 
 // Middleware
@@ -40,6 +39,7 @@ db.sequelize.sync({ force: true }).then(function() {
       PORT
     );
     var carePlans = [];
+    //load all seed data into database for user-based functionality
     db.TestList.bulkCreate(seedData.getTests())
       .then(db.TestQuestion.bulkCreate(seedData.getQuestions()))
       .then(db.Client.bulkCreate(seedData.getClients()))

@@ -40,8 +40,8 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   User.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
+    // Associating User with TestRecord and EVVRecord
+    // When an User is deleted, also delete any associated TestRecords or EVVRecords
     User.hasMany(models.TestRecord, {
       onDelete: "cascade"
     });

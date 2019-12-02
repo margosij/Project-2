@@ -8,6 +8,7 @@ $(document).ready(function() {
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
     event.preventDefault();
+    //create userData object with necessary email, password, and employeeName
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
@@ -27,6 +28,7 @@ $(document).ready(function() {
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
   function signUpUser(email, password, employeeName) {
+    //post call to add new user to database and authenticate them
     $.post("/api/signup", {
       email: email,
       password: password,

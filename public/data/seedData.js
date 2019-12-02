@@ -1,8 +1,11 @@
+//require taskList to generate random tasks for careplans
 var taskList = require("./taskList.js");
 var moment = require("moment");
 
 module.exports = {
+  //function for generating TestList Seed Data
   getTests: function() {
+    //testList has keys of testName, testCategory, testRequired, and testCreatedBy
     var testList = [
       {
         testName: "HIPAA",
@@ -26,7 +29,9 @@ module.exports = {
 
     return testList;
   },
+  //function getQuestions to generate TestQuestion seed data
   getQuestions: function() {
+    //testQuestions has keys of testListId, questionText, questionAnswer, and questionOptions
     var testQuestions = [
       {
         TestListId: 1,
@@ -177,10 +182,12 @@ module.exports = {
 
     return testQuestions;
   },
+  //function get Clients to generate Client Table Seed DAta
   getClients: function() {
+    //clientList has keys of clientNAme and clientAddress
     var clientList = [
       {
-        clientName: "Old Person",
+        clientName: "Grandma Nelly",
         clientAddress: "10 Main Street, Raleigh, NC 27613"
       },
       {
@@ -195,8 +202,10 @@ module.exports = {
 
     return clientList;
   },
+  //function createCarePlans to generate random CarePlan data for the already generated clients
   createCarePlans: function() {
     function createRandomTasks() {
+      //newTaskObject has keys Monday-Sunday with sub keys related to patient Activities of Daily Living (ADLs)
       var newTaskObject = {
         Monday: {
           Bathing: {},
@@ -255,9 +264,10 @@ module.exports = {
           IADL: {}
         }
       };
-
+      //random task list is generated for each client at the start of care plans using the taskList data
       Object.keys(newTaskObject).forEach(function(element) {
         for (var i = 0; i < 5; i++) {
+          //adds random object from associated taskList ADL up to 5 times
           newTaskObject[element].Bathing[
             taskList.Bathing[Math.floor(Math.random() * 10)]
           ] = "";
@@ -281,7 +291,7 @@ module.exports = {
 
       return newTaskObject;
     }
-
+    //carePlans has keys of clientId and taskObject
     var carePlans = [
       {
         ClientId: 1,
@@ -299,8 +309,10 @@ module.exports = {
 
     return carePlans;
   },
+  //createSchedule function generates random schedules for employee users
   createSchedule: function(carePlans) {
     var scheduleList = [];
+    //adds a random start time and end time for shifts over each of the next 7 days
     for (var index = 1; index < 4; index++) {
       for (var i = 0; i < 7; i++) {
         var randomStart = Math.floor(Math.random() * 5) + 1 + ":00";

@@ -8,11 +8,10 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   CarePlan.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
+    // We're saying that a CarePlan should belong to an Client
+    // A CarePlan can't be created without an Author due to the foreign key constraint
     CarePlan.belongsTo(models.Client, {
       foreignKey: {
-        //needs to be changed later to false once we get the login set up
         allowNull: true
       }
     });

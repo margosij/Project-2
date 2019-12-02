@@ -65,17 +65,21 @@ $(document).ready(function() {
     );
     infoWindow.open(map);
   }
-
+  //function insertEVV inserts the EVV record for Check In or Check Out
   function insertEVV(longitude, latitude) {
+    //get user data to pull correct schedule
     $.ajax({
       url: "/api/user_data",
       type: "GET"
     }).then(function(userData) {
+      //get shift record for shift occuring today
       $.ajax({
         url: "/api/shiftRecord/" + userData.id,
         type: "GET"
       }).then(function(currentShift) {
+        //checks if today's shift clientSignature has a value which indicates shift end
         if (currentShift.clientSignature) {
+          //creates Check Out object to send to db
           var EVVRecord = {
             checkOutLongitude: longitude,
             checkOutLatitude: latitude,
@@ -84,6 +88,7 @@ $(document).ready(function() {
             id: currentShift.id
           };
         } else {
+          //creates Check In object if client signature is blank in database
           var EVVRecord = {
             checkInLongitude: longitude,
             checkInLatitude: latitude,
@@ -92,7 +97,7 @@ $(document).ready(function() {
             id: currentShift.id
           };
         }
-
+        //puts new EVVRecord data into database for respective Check In or Check Out
         $.ajax({
           method: "PUT",
           url: "/api/EVVRecord",
@@ -103,8 +108,9 @@ $(document).ready(function() {
       });
     });
   }
-
+  //function to check if user option should be Check In or Check Out on page load
   function checkInorOut() {
+    //ajax call to get user data and shift data
     $.ajax({
       url: "/api/user_data",
       type: "GET"
@@ -113,6 +119,7 @@ $(document).ready(function() {
         url: "/api/shiftRecord/" + userData.id,
         type: "GET"
       }).then(function(currentShift) {
+        //if current shift client signature is filled out and shift is over then change Check In text to Check Out
         if (currentShift.clientSignature) {
           $("#lblCheckIn").text("Check Out");
           $("#exampleModalLongTitle").text("Employee Check-Out Success");
@@ -121,5 +128,3 @@ $(document).ready(function() {
     });
   }
 });
-
-//Building functionality for home page on-click events

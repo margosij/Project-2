@@ -15,8 +15,8 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Client.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
+    // Associating Client with CarePlan
+    // When an Client is deleted, also delete any associated Posts
     Client.hasMany(models.CarePlan, {
       onDelete: "cascade"
     });

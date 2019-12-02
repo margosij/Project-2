@@ -23,7 +23,7 @@ module.exports = function(app) {
       res.json(dbTestQuestions);
     });
   });
-
+  //post route for creating a new TestRecord for a User which has just taken a test
   app.post("/api/testRecordSave", function(req, res) {
     console.log(JSON.stringify(req.body));
     db.TestRecord.create({
@@ -40,14 +40,14 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
-
+  //GET route for finding all items in the TestList to display options to user
   app.get("/api/testList/", function(req, res) {
     db.TestList.findAll({}).then(function(dbTestList) {
       res.json(dbTestList);
     });
   });
 
-  // Get route for retrieving a single post
+  // Get route for retrieving a single shiftRecord associated with current User
   app.get("/api/shiftRecord/:id", function(req, res) {
     db.EVVRecord.findOne({
       where: {
@@ -59,7 +59,7 @@ module.exports = function(app) {
     });
   });
 
-  // PUT route for saving a new post
+  // PUT route for saving a new shiftRecord object
   app.put("/api/shiftRecord", function(req, res) {
     db.EVVRecord.update(
       {
@@ -70,7 +70,7 @@ module.exports = function(app) {
       res.json(dbshiftRecord);
     });
   });
-
+  //PUT route to save the current shift's employee signature on shift finalization
   app.put("/api/shiftEmployeeSignature", function(req, res) {
     db.EVVRecord.update(
       {
@@ -81,7 +81,7 @@ module.exports = function(app) {
       res.json(dbshiftRecord);
     });
   });
-
+  //PUT route to save the current shift's client signature on shift finalization
   app.put("/api/shiftClientSignature", function(req, res) {
     db.EVVRecord.update(
       {
@@ -93,7 +93,7 @@ module.exports = function(app) {
     });
   });
 
-  // Get route for retrieving a single post
+  // Get route for retrieving a single TestRecord associated with current User
   app.get("/api/testRecord/:userId/:testId", function(req, res) {
     db.TestRecord.findOne({
       where: {
@@ -105,21 +105,15 @@ module.exports = function(app) {
     });
   });
 
-  // PUT route for saving a new post
+  // PUT route for updating the EVVRecord of the current shift of the signed in user
   app.put("/api/EVVRecord", function(req, res) {
-    db.EVVRecord.update(
-      req.body,
-      // {
-      //   checkInLongitude: req.body.checkInLongitude,
-      //   checkInLatitude: req.body.checkInLatitude,
-      //   checkInTime: req.body.checkInTime
-      // },
-      { where: { id: req.body.id } }
-    ).then(function(dbEVVRecord) {
+    db.EVVRecord.update(req.body, { where: { id: req.body.id } }).then(function(
+      dbEVVRecord
+    ) {
       res.json(dbEVVRecord);
     });
   });
-
+  //GET route for finding all shiftst associated with current User
   app.get("/api/shifts/:id", function(req, res) {
     db.EVVRecord.findAll({
       where: {

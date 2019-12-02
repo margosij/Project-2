@@ -16,27 +16,17 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 
-  // blog route loads blog.html
+  // route loads testList.html
   app.get("/testList", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/testList.html"));
   });
 
+  // route loads testActive.html
   app.get("/testActive", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/testActive.html"));
   });
 
-  app.get("/evv", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/evv.html"));
-  });
-
-  app.get("/test2", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/test2.html"));
-  });
-
-  app.get("/test", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/test.html"));
-  });
-
+  // route loads signup.html
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -65,6 +55,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/viewSchedule.html"));
   });
 
+  // route loads viewShift.html
   app.get("/shift", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/viewShift.html"));
   });

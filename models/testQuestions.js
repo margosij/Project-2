@@ -20,8 +20,8 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   TestQuestion.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
+    // We're saying that a TestQuestion should belong to an TestList
+    // A TestQuestion can't be created without an TestList due to the foreign key constraint
     TestQuestion.belongsTo(models.TestList, {
       foreignKey: {
         allowNull: false
